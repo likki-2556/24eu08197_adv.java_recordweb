@@ -1,0 +1,913 @@
+/* coding-preloader.css - Futuristic OpenJDK & Compiler Telemetry Preloader */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.coding-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: 100vw;
+  max-width: 100dvw;
+  max-height: 100vh;
+  max-height: 100dvh;
+  z-index: 9999999;
+  background: #090d14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden !important;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+  user-select: none;
+}
+
+.coding-preloader.preloader-finished {
+  opacity: 0;
+  transform: scale(1.04) translateY(-14px);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+/* 1. Cybernetic Blueprint Grid Background */
+.preloader-grid-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(66, 85, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(66, 85, 212, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 80%);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 2. Ambient Plasma Glow */
+.preloader-radial-glow {
+  position: absolute;
+  width: min(680px, 90vw);
+  height: min(680px, 90vw);
+  max-width: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(66, 85, 212, 0.22) 0%, rgba(16, 185, 129, 0.1) 45%, transparent 70%);
+  filter: blur(64px);
+  pointer-events: none;
+  animation: preloader-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes preloader-pulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+/* 3. Floating Syntax Glyph Rain Matrix (Desktop Only) */
+.preloader-syntax-rain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+  /* Disabled on mobile by default */
+}
+
+@media (min-width: 769px) {
+  .preloader-syntax-rain {
+    display: block;
+  }
+}
+
+.rain-glyph {
+  position: absolute;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(66, 85, 212, 0.35);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: rain-fall 2.4s linear forwards;
+  max-width: 80vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes rain-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  15% {
+    opacity: 0.85;
+  }
+
+  80% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(130px);
+  }
+}
+
+/* 4. Central HUD Glassmorphic Container */
+.preloader-hud-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  background: rgba(13, 18, 28, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  padding: 2rem 2.2rem;
+  box-shadow:
+    0 32px 90px rgba(0, 0, 0, 0.78),
+    0 0 55px rgba(66, 85, 212, 0.25),
+    0 0 0 1px rgba(66, 85, 212, 0.22) inset;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* Top Status Bar */
+.hud-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  gap: 0.5rem;
+}
+
+.hud-brand-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.hud-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: blink-dot 1s infinite alternate;
+  flex-shrink: 0;
+}
+
+@keyframes blink-dot {
+  0% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hud-mono-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.hud-course-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.16);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Center Emblem & Titles */
+.hud-emblem-center {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.hud-emblem-aura {
+  width: 58px;
+  height: 72px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-emblem-aura::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 152, 29, 0.35), rgba(83, 130, 161, 0.2), transparent 70%);
+  filter: blur(12px);
+  animation: steam-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes steam-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.hud-java-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 12px rgba(83, 130, 161, 0.4));
+}
+
+.hud-meta-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.hud-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hud-main-title {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.hud-sub-spec {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.35;
+}
+
+/* 5. Terminal Console Window */
+.hud-terminal-window {
+  background: #06090e;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  padding: 0.95rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.65);
+  max-height: 220px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.terminal-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.terminal-traffic-lights .light {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-traffic-lights .light.red {
+  background: #ef4444;
+}
+
+.terminal-traffic-lights .light.yellow {
+  background: #f59e0b;
+}
+
+.terminal-traffic-lights .light.green {
+  background: #10b981;
+}
+
+.terminal-title-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.terminal-output-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  max-height: 165px;
+  scroll-behavior: smooth;
+  padding-right: 4px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.terminal-output-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal-output-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.terminal-output-body::-webkit-scrollbar-thumb {
+  background: rgba(66, 85, 212, 0.45);
+  border-radius: 4px;
+}
+
+.terminal-log-line {
+  opacity: 0;
+  transform: translateY(3px);
+  animation: terminal-line-in 0.16s ease-out forwards;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+@keyframes terminal-line-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cmd-prompt {
+  color: #10b981;
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.cmd-str {
+  color: #f6f5f1;
+  font-weight: 600;
+}
+
+.t-dim {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+.t-cyan {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.t-green {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.t-purple {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+.t-gold {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+/* 6. Laser Precision Progress Bar */
+.hud-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.hud-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.hud-status-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+}
+
+.hud-progress-counter {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.hud-progress-track {
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.hud-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #4255d4, #38bdf8 70%, #10b981);
+  border-radius: 999px;
+  position: relative;
+  transition: width 0.08s linear;
+}
+
+.hud-progress-beam {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background: #ffffff;
+  box-shadow: 0 0 14px #38bdf8, 0 0 6px #ffffff;
+  border-radius: 999px;
+}
+
+/* 7. Action Launch Button & Countdown Section */
+.hud-action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.hud-action-area.ready {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.btn-hud-launch {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.95rem 1.6rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3b49df 0%, #2563eb 50%, #0284c7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.45),
+    0 0 20px rgba(56, 189, 248, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: launch-btn-pulse 2.2s infinite ease-in-out;
+}
+
+@keyframes launch-btn-pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 10px 30px rgba(37, 99, 235, 0.45),
+      0 0 20px rgba(56, 189, 248, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow:
+      0 14px 42px rgba(37, 99, 235, 0.7),
+      0 0 35px rgba(56, 189, 248, 0.65),
+      0 0 0 2px rgba(56, 189, 248, 0.5) inset;
+    transform: scale(1.018);
+  }
+}
+
+.btn-hud-launch:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow:
+    0 16px 45px rgba(37, 99, 235, 0.75),
+    0 0 40px rgba(56, 189, 248, 0.75);
+}
+
+.btn-launch-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-launch-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #ffffff;
+  margin-left: 2px;
+}
+
+.btn-launch-text {
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-launch-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #38bdf8;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.hud-timer-subtext {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.hud-timer-subtext .bullet {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hud-timer-subtext strong {
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+/* 8. Footer Accreditation Band */
+.hud-footer-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.06em;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  gap: 0.5rem;
+}
+
+.hud-footer-band span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hud-status-ready {
+  color: #10b981;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  flex-shrink: 0;
+}
+
+/* 9. Replay Boot Button (Inside Hero Top Bar) */
+.btn-replay-preloader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--canvas-base);
+  border: var(--border-light);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-neumorphic-out);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--celestial-indigo);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.btn-replay-preloader:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-neumorphic-float);
+  color: var(--ink-primary);
+}
+
+.btn-replay-preloader svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+  transition: transform 0.4s ease;
+}
+
+.btn-replay-preloader:hover svg {
+  transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   MOBILE & VIEWPORT RESPONSIVE RULES (Placed at the bottom for strict cascade)
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .coding-preloader {
+    padding: 12px;
+  }
+
+  .preloader-radial-glow {
+    width: 80vw;
+    height: 80vw;
+    filter: blur(42px);
+  }
+
+  .preloader-hud-card {
+    width: 100%;
+    max-width: 416px;
+    padding: 1.15rem 1rem;
+    gap: 0.85rem;
+    box-sizing: border-box;
+    border-radius: 18px;
+    margin: 0 auto;
+  }
+
+  .hud-top-bar {
+    padding-bottom: 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .hud-brand-info {
+    gap: 0.4rem;
+  }
+
+  .hud-mono-tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.02em;
+    max-width: 52vw;
+  }
+
+  .hud-course-pill {
+    font-size: 0.58rem;
+    padding: 0.15rem 0.42rem;
+  }
+
+  .hud-emblem-center {
+    gap: 0.85rem;
+  }
+
+  .hud-emblem-aura {
+    width: 44px;
+    height: 54px;
+  }
+
+  .hud-eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+  }
+
+  .hud-main-title {
+    font-size: 1.12rem;
+    line-height: 1.2;
+  }
+
+  .hud-sub-spec {
+    font-size: 0.67rem;
+    line-height: 1.35;
+  }
+
+  .hud-terminal-window {
+    padding: 0.7rem 0.8rem;
+    gap: 0.4rem;
+    max-height: 165px;
+  }
+
+  .terminal-title-text {
+    font-size: 0.56rem;
+  }
+
+  .terminal-output-body {
+    font-size: 0.64rem;
+    max-height: 120px;
+  }
+
+  .hud-status-label {
+    font-size: 0.62rem;
+    max-width: 65vw;
+  }
+
+  .hud-progress-counter {
+    font-size: 0.75rem;
+  }
+
+  .btn-hud-launch {
+    padding: 0.82rem 0.95rem;
+    font-size: 0.82rem;
+    gap: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .btn-launch-pill {
+    font-size: 0.65rem;
+    padding: 0.12rem 0.4rem;
+  }
+
+  .hud-timer-subtext {
+    font-size: 0.66rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 0.25rem;
+  }
+
+  .hud-footer-band {
+    font-size: 0.56rem;
+    padding-top: 0.35rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .coding-preloader {
+    padding: 8px;
+  }
+
+  .preloader-hud-card {
+    padding: 0.95rem 0.75rem;
+    gap: 0.7rem;
+    border-radius: 14px;
+  }
+
+  .hud-main-title {
+    font-size: 0.98rem;
+  }
+
+  .hud-sub-spec {
+    font-size: 0.62rem;
+  }
+
+  .btn-hud-launch {
+    font-size: 0.76rem;
+    padding: 0.75rem 0.8rem;
+  }
+
+  .hud-mono-tag {
+    max-width: 45vw;
+    font-size: 0.52rem;
+  }
+
+  .hud-course-pill {
+    font-size: 0.52rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .terminal-output-body {
+    font-size: 0.6rem;
+    max-height: 105px;
+  }
+}
+
+@media (max-height: 720px) {
+  .preloader-hud-card {
+    gap: 0.6rem;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .hud-terminal-window {
+    max-height: 130px;
+  }
+
+  .terminal-output-body {
+    max-height: 85px;
+  }
+
+  .hud-emblem-aura {
+    height: 44px;
+  }
+}

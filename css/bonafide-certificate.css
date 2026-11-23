@@ -1,0 +1,538 @@
+/* bonafide-certificate.css - Classical Academic Bonafide Certificate Component */
+
+.room-certificate {
+  min-height: auto;
+  padding: 3rem 0 4.5rem 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.certificate-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-bottom: 2.2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--border-editorial);
+}
+
+.certificate-title-side {
+  max-width: 720px;
+}
+
+.certificate-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.btn-cert-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.4rem;
+  background: var(--canvas-base);
+  border: var(--border-light);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-clay);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 44px;
+}
+
+.btn-cert-action svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.btn-cert-action:hover {
+  background: var(--paper-base);
+  box-shadow: var(--shadow-clay-hover);
+  transform: translateY(-2px);
+  color: var(--celestial-indigo);
+  border-color: rgba(66, 85, 212, 0.3);
+}
+
+.btn-cert-action.btn-cert-primary {
+  background: var(--celestial-indigo);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(66, 85, 212, 0.25);
+}
+
+.btn-cert-action.btn-cert-primary:hover {
+  background: #3545b3;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.hero-top-cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  background: var(--canvas-base);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-clay);
+  border: var(--border-light);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--celestial-indigo);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.hero-top-cert-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.hero-top-cert-btn:hover {
+  background: var(--celestial-indigo);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Master Certificate Parchment Card */
+.bonafide-cert-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.bonafide-cert-card {
+  position: relative;
+  background: #fdfcf9;
+  border: 2.5px solid #0f172a;
+  border-radius: 4px;
+  padding: 1.25rem;
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.12),
+    0 6px 20px rgba(184, 141, 87, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+}
+
+/* Inner Ornamental Dashed Frame */
+.cert-inner-frame {
+  position: relative;
+  border: 1.5px dashed #b88d57;
+  padding: 2.8rem 3.2rem;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(251, 249, 243, 0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Corner Filigree Accents */
+.cert-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #b88d57;
+  pointer-events: none;
+}
+
+.cert-corner-tl {
+  top: 8px;
+  left: 8px;
+  border-top: 2.5px solid #b88d57;
+  border-left: 2.5px solid #b88d57;
+}
+
+.cert-corner-tr {
+  top: 8px;
+  right: 8px;
+  border-top: 2.5px solid #b88d57;
+  border-right: 2.5px solid #b88d57;
+}
+
+.cert-corner-bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2.5px solid #b88d57;
+  border-left: 2.5px solid #b88d57;
+}
+
+.cert-corner-br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2.5px solid #b88d57;
+  border-right: 2.5px solid #b88d57;
+}
+
+/* Watermark Seal in Background */
+.cert-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(380px, 70vw);
+  height: min(380px, 70vw);
+  max-width: 100%;
+  opacity: 0.038;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cert-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+
+/* Top College Emblem */
+.cert-logo-container {
+  width: 82px;
+  height: 94px;
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 10px rgba(184, 141, 87, 0.15));
+}
+
+.cert-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Typography Hierarchy matching the authentic scanned certificate */
+.cert-institution-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.4rem, 2.6vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #0f172a;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.cert-dept-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.72rem, 1.2vw, 0.92rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b88d57;
+  margin-top: 0.5rem;
+}
+
+.cert-divider-line {
+  width: 110px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b88d57, transparent);
+  margin: 1.4rem auto 1.6rem auto;
+}
+
+.cert-main-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.75rem, 3.4vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+/* Narrative Body with Elegant Underlines */
+.cert-body-narrative {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.1rem);
+  line-height: 2.3;
+  color: #1e293b;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto 1.2rem auto;
+}
+
+.cert-val-underline {
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 1.5px solid #0f172a;
+  padding: 0 0.35rem 0.1rem 0.35rem;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+.cert-val-underline.cert-val-name {
+  color: var(--celestial-indigo);
+  font-size: 1.05em;
+}
+
+.cert-val-underline.cert-val-roll {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* 3-Column Signatures Row */
+.cert-signatures-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+}
+
+.cert-sig-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cert-sig-line {
+  width: 82%;
+  height: 1px;
+  background: #334155;
+  margin-bottom: 0.75rem;
+}
+
+.cert-sig-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.cert-sig-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Bottom Footer (Date & Seal Stamp) */
+.cert-footer-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 3.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px dotted rgba(184, 141, 87, 0.4);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.cert-date-block {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cert-dots-line {
+  border-bottom: 1.5px dotted #64748b;
+  display: inline-block;
+  min-width: 140px;
+  height: 1.1em;
+}
+
+.cert-stamp-space {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #64748b;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cert-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px dashed #b88d57;
+  color: #b88d57;
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .bonafide-cert-card {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bonafide-document-sheet {
+    padding: 0.65rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cert-inner-frame {
+    padding: 1.5rem 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .cert-college-name {
+    font-size: 1.05rem;
+    line-height: 1.25;
+  }
+
+  .cert-dept-tag {
+    font-size: 0.72rem;
+  }
+
+  .cert-title-primary {
+    font-size: 1.35rem;
+    letter-spacing: 0.1em;
+  }
+
+  .cert-body-narrative {
+    text-align: left;
+    text-align-last: left;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .cert-signatures-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .cert-sig-line {
+    width: 60%;
+  }
+
+  .cert-footer-meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .cert-dots-line {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bonafide-cert-card {
+    padding: 0.25rem;
+  }
+
+  .bonafide-document-sheet {
+    padding: 0.5rem;
+    border-width: 2px;
+  }
+
+  .cert-inner-frame {
+    padding: 1.2rem 0.65rem;
+    border-width: 1px;
+  }
+
+  .cert-college-name {
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+
+  .cert-dept-tag {
+    font-size: 0.66rem;
+  }
+
+  .cert-title-primary {
+    font-size: 1.18rem;
+    letter-spacing: 0.06em;
+  }
+
+  .cert-body-narrative {
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+}
+
+/* Dedicated Print Stylesheet */
+@media print {
+
+  /* Hide all interactive app elements except the certificate */
+  body * {
+    visibility: hidden;
+  }
+
+  #bonafide-certificate,
+  #bonafide-certificate * {
+    visibility: visible;
+  }
+
+  #bonafide-certificate {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .certificate-header-block,
+  .certificate-actions-bar,
+  .btn-cert-action {
+    display: none !important;
+  }
+
+  .bonafide-cert-card {
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    max-width: 100% !important;
+    width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  .cert-inner-frame {
+    border-color: #99733e !important;
+    background: #ffffff !important;
+  }
+
+  .cert-val-underline {
+    border-color: #000000 !important;
+  }
+}

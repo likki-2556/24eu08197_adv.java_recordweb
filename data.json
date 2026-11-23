@@ -1,0 +1,678 @@
+{
+  "student": {
+    "name": "Likhithsai Vemulapalli",
+    "rollNumber": "24EU08197",
+    "college": "Siddhartha Academy of Higher Education",
+    "department": "B.Tech Information Technology",
+    "semester": "5th Semester \u00b7 3rd Year",
+    "laboratory": "Advanced Java Laboratory (24IT303)",
+    "recordedTasks": 13,
+    "labWeeks": 13,
+    "courseCode": "24IT303",
+    "labCode": "24IT303"
+  },
+  "exhibits": [
+    {
+      "id": "exhibit-01",
+      "number": "01",
+      "title": "Adv. Java Programming / Lab-1: Architectural Fundamentals",
+      "technology": "Java Fundamentals \u00b7 Applets \u00b7 Servlets \u00b7 JDBC / ODBC \u00b7 Spring Framework",
+      "category": "Unit I: Fundamentals",
+      "unit": "Unit I",
+      "readingTime": "6 min review",
+      "difficulty": "Foundation",
+      "description": "Comprehensive comparative study of Core Java and Advanced Java, Applets lifecycle, Servlets request-response model, JDBC vs ODBC database connectivity, HTTP Cookies and Sessions, Spring Boot vs Traditional Spring Framework, and standalone vs enterprise web architectures.",
+      "aim": "To answer the Lab-1 questions on Java architectural fundamentals, applets, servlets, JDBC and ODBC, cookies and sessions, and requirements of enterprise web applications.",
+      "keyConcepts": [
+        "1. What are the differences between Core Java and Advanced Java?",
+        "2. What are the main important features of Applets in Java?",
+        "3. What are the key features of Java Servlets?",
+        "4. What are the differences between Applets and Servlets in Java?",
+        "5. What is the main role of JDBC and ODBC in database connectivity?",
+        "6. What are the differences between ODBC and JDBC?",
+        "7. What are the differences between Cookies and Sessions in Web Applications?",
+        "8. What are the differences between Spring Boot and the Traditional Spring Framework?",
+        "9. What are the differences between Standalone Applications and Web Applications?",
+        "10. What are the basic requirements for executing a Web Application?"
+      ],
+      "procedure": [
+        "Review comparative differences between Core Java and Advanced Java.",
+        "Summarize features of Java Applets and their security sandbox model.",
+        "Analyze Java Servlets and client-server request dispatching.",
+        "Compare JDBC and ODBC driver architectures and performance.",
+        "Analyze state management via HTTP Cookies and HttpSession.",
+        "Evaluate Spring Boot opinionated auto-configuration vs XML-based Spring."
+      ],
+      "pdfPath": "weeks/week1/Week 01 - Advanced Java Fundamentals & Web Architecture.pdf",
+      "pageCount": 5,
+      "artifactType": "lab-questionnaire",
+      "specs": {
+        "Document": "Adv. Java Programming / Lab-1",
+        "Curriculum": "Java Foundations & Web Architecture",
+        "Source": "weeks/week1/Week 01 - Advanced Java Fundamentals & Web Architecture.pdf",
+        "Page Count": 5
+      },
+      "pages": [
+        "weeks/week1/pages/page-01.jpg",
+        "weeks/week1/pages/page-02.jpg",
+        "weeks/week1/pages/page-03.jpg",
+        "weeks/week1/pages/page-04.jpg",
+        "weeks/week1/pages/page-05.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-02",
+      "number": "02",
+      "title": "Downloading, Installing, and Configuring OpenJDK & Oracle JDK SE 26 on Ubuntu",
+      "technology": "OpenJDK \u00b7 Oracle JDK SE 26 \u00b7 Ubuntu Linux \u00b7 update-alternatives \u00b7 POSIX",
+      "category": "Unit I: Environment",
+      "unit": "Unit I",
+      "readingTime": "5 min setup",
+      "difficulty": "System Level",
+      "description": "Production installation and multi-version management of OpenJDK and Oracle JDK SE 26 in the Ubuntu operating system, utilizing POSIX tar extraction, system directory layout in /opt, update-alternatives registration, and dual-binary verification.",
+      "aim": "To download, install, configure, register, and verify Oracle JDK SE 26 and OpenJDK binaries in the Ubuntu operating system.",
+      "keyConcepts": [
+        "Step 1: Open Terminal and navigate to Downloads directory (cd ~/Downloads)",
+        "Step 2: Download Oracle JDK 26 Linux x64 archive via wget",
+        "Step 3: Extract the gzip tarball (tar -xzf jdk-26_linux-x64_bin.tar.gz)",
+        "Step 4: Move extracted JDK hierarchy to /opt/jdk-26 system path",
+        "Step 5: Register java and javac with update-alternatives system manager",
+        "Step 6: Configure system default runtime via update-alternatives --config",
+        "Step 7: Verify runtime environment (java -version and javac -version)"
+      ],
+      "procedure": [
+        "Open the terminal shell and navigate to ~/Downloads.",
+        "Execute wget to fetch the official Oracle JDK 26 linux-x64 binary archive.",
+        "Decompress the tarball using tar -xzf.",
+        "Relocate the JDK directory to the standard /opt/jdk-26 system path using sudo mv.",
+        "Register java and javac with update-alternatives with priority flags.",
+        "Validate active runtime with java -version and javac -version."
+      ],
+      "pdfPath": "weeks/week2/Week 02 - OpenJDK & Oracle JDK 26 Installation on Ubuntu.pdf",
+      "pageCount": 2,
+      "artifactType": "setup-protocol",
+      "specs": {
+        "Document": "JDK SE 26 Ubuntu Installation Protocol",
+        "System Target": "Ubuntu Linux (POSIX x86_64)",
+        "Source": "weeks/week2/Week 02 - OpenJDK & Oracle JDK 26 Installation on Ubuntu.pdf",
+        "Page Count": 2
+      },
+      "pages": [
+        "weeks/week2/pages/page-01.jpg",
+        "weeks/week2/pages/page-02.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-03",
+      "number": "03",
+      "title": "Java & MS Access Database Connectivity Without DSN (UCanAccess)",
+      "technology": "UCanAccess 5.1.3 \u00b7 Jackcess \u00b7 HSQLDB \u00b7 MS Access (.accdb) \u00b7 Pure JDBC",
+      "category": "Unit I: Database",
+      "unit": "Unit I",
+      "readingTime": "7 min setup",
+      "difficulty": "Intermediate",
+      "description": "Direct Type-4 driverless Java-to-MS Access connection process without relying on legacy Windows ODBC DSN, incorporating UCanAccess, Jackcess, Apache Commons Lang/Logging, and HSQLDB libraries with SQL queries on Database1.accdb.",
+      "aim": "To connect a Java application directly to a Microsoft Access database (.accdb) without an ODBC DSN using UCanAccess and supporting driver libraries.",
+      "keyConcepts": [
+        "Step 1: Create local directory structure (mkdir ~/Downloads/ucanaccess)",
+        "Step 2: Navigate to target directory and fetch UCanAccess 5.1.3 JAR",
+        "Step 3: Download supporting dependencies (Jackcess 4.0.8, Commons-Lang3, Commons-Logging, HSQLDB)",
+        "Step 4: Create Database1.accdb with student table (ID, NAME, MARKS)",
+        "Step 5: Author AccessDemo.java connecting via jdbc:ucanaccess://",
+        "Step 6: Configure comprehensive CLASSPATH including all 5 required JARs",
+        "Step 7: Compile and execute Java program to query Access records"
+      ],
+      "procedure": [
+        "Create working directory for UCanAccess libraries.",
+        "Download UCanAccess core and dependencies (Jackcess, HSQLDB, Commons).",
+        "Initialize Access database file Database1.accdb with student schema.",
+        "Write AccessDemo.java using standard JDBC DriverManager connection string.",
+        "Export CLASSPATH environment variable referencing all dependency JARs.",
+        "Compile AccessDemo.java and execute query to retrieve student marks."
+      ],
+      "pdfPath": "weeks/week3/Week 03 - Java and MS Access Database Connectivity without DSN.pdf",
+      "pageCount": 3,
+      "artifactType": "ms-access-connection",
+      "specs": {
+        "Document": "Java & MS Access Without DSN Protocol",
+        "Database": "Database1.accdb",
+        "Driver": "net.ucanaccess.jdbc.UcanaccessDriver",
+        "Source": "weeks/week3/Week 03 - Java and MS Access Database Connectivity without DSN.pdf",
+        "Page Count": 3
+      },
+      "pages": [
+        "weeks/week3/pages/page-01.jpg",
+        "weeks/week3/pages/page-02.jpg",
+        "weeks/week3/pages/page-03.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-04",
+      "number": "04",
+      "title": "JDBC Connectivity with MySQL Database",
+      "technology": "MySQL 8+ \u00b7 MySQL Connector/J \u00b7 JDBC Statement \u00b7 ResultSet",
+      "category": "Unit I: Database",
+      "unit": "Unit I",
+      "readingTime": "5 min demo",
+      "difficulty": "Intermediate",
+      "description": "Foundational MySQL database pipeline establishing a JDBC socket connection to MySQL, creating college database and student table, inserting sample records, and executing query statements using ResultSet iteration.",
+      "aim": "To establish a Java JDBC connection to a MySQL database server and retrieve student table records from the college database.",
+      "keyConcepts": [
+        "Step 1: Create MySQL Database (CREATE DATABASE college; USE college;)",
+        "Step 2: Define table structure (CREATE TABLE student (id INT, name VARCHAR(50)))",
+        "Step 3: Insert initial dataset into student table (Ramesh, Haswika, Harshith)",
+        "Step 4: Load JDBC driver (com.mysql.cj.jdbc.Driver)",
+        "Step 5: Establish connection via DriverManager.getConnection()",
+        "Step 6: Execute SELECT query using Statement object and iterate ResultSet",
+        "Step 7: Output records to console and cleanly terminate connection"
+      ],
+      "procedure": [
+        "Create college schema and student table in MySQL server.",
+        "Populate initial records with roll numbers and student names.",
+        "Author JdbcDemo.java with connection parameters and credentials.",
+        "Execute Statement.executeQuery('SELECT * FROM student').",
+        "Traverse ResultSet rows using rs.next() and print attributes to stdout.",
+        "Close ResultSet, Statement, and Connection objects in finally/try-with-resources."
+      ],
+      "pdfPath": "weeks/week4/Week 04 - JDBC MySQL Database Connectivity.pdf",
+      "pageCount": 3,
+      "artifactType": "mysql-jdbc-demo",
+      "specs": {
+        "Document": "JDBC With MySQL Database",
+        "Target Schema": "college.student",
+        "Driver": "com.mysql.cj.jdbc.Driver",
+        "Source": "weeks/week4/Week 04 - JDBC MySQL Database Connectivity.pdf",
+        "Page Count": 3
+      },
+      "pages": [
+        "weeks/week4/pages/page-01.jpg",
+        "weeks/week4/pages/page-02.jpg",
+        "weeks/week4/pages/page-03.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-05",
+      "number": "05",
+      "title": "Local & Remote Network MySQL Database Connectivity Using JDBC",
+      "technology": "Remote MySQL \u00b7 TCP/IP Port 3306 \u00b7 LAN IP Socket \u00b7 JDBC \u00b7 Employee Schema",
+      "category": "Unit I: Networking & JDBC",
+      "unit": "Unit I",
+      "readingTime": "8 min analysis",
+      "difficulty": "Advanced",
+      "description": "Dual investigation comparing local localhost JDBC socket connectivity against remote IPv4 network database connectivity (jdbc:mysql://10.0.8.130:3306/it). Demonstrates firewall binding, remote user privilege grants, employee record traversal, and remote DML INSERT operations.",
+      "aim": "To establish local and remote network database connectivity using Java JDBC to retrieve, insert, and verify records in the employee table across a local area network.",
+      "keyConcepts": [
+        "Part A: Localhost Database Connectivity (JavaApplication26.java)",
+        "Part B: Remote Network Database Connectivity via IP (RemoteDB.java)",
+        "Step 1: Network binding configuration on remote MySQL (bind-address = 0.0.0.0)",
+        "Step 2: MySQL user privilege grant for remote client subnet access",
+        "Step 3: JDBC Driver initialization via com.mysql.cj.jdbc.Driver",
+        "Step 4: Connection string over network IP (jdbc:mysql://10.0.8.130:3306/it)",
+        "Step 5: Query execution for employee schema (rollno, name)",
+        "Step 6: Remote DML execution (INSERT INTO employee VALUES('84','ipsitha'))",
+        "Step 7: Output verification and resource cleanup"
+      ],
+      "procedure": [
+        "Configure remote MySQL server to listen on TCP port 3306 across LAN interfaces.",
+        "Grant permissions on `it` database to user 'root' from remote IP address.",
+        "Include mysql-connector-j-9.4.0.jar in runtime classpath.",
+        "Execute local query via JavaApplication26 to verify local socket operation.",
+        "Execute RemoteDB.java connecting across network to 10.0.8.130:3306.",
+        "Read remote records with ResultSet and insert new employee record using executeUpdate().",
+        "Confirm remote transaction persistence and close connection."
+      ],
+      "pdfPath": "weeks/week5/Week 05 - Local and Remote MySQL Network Database Connectivity.pdf",
+      "pageCount": 6,
+      "artifactType": "remote-db-experiment",
+      "specs": {
+        "Document": "Local and Remote JDBC Network Connectivity",
+        "Remote Host": "10.0.8.130:3306 (TCP)",
+        "Database": "it (employee table)",
+        "Source": "weeks/week5/Week 05 - Local and Remote MySQL Network Database Connectivity.pdf",
+        "Page Count": 6
+      },
+      "pages": [
+        "weeks/week5/pages/page-01.jpg",
+        "weeks/week5/pages/page-02.jpg",
+        "weeks/week5/pages/page-03.jpg",
+        "weeks/week5/pages/page-04.jpg",
+        "weeks/week5/pages/page-05.jpg",
+        "weeks/week5/pages/page-06.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-06",
+      "number": "06",
+      "title": "Advanced JDBC Programming & CRUD Operations Suite",
+      "technology": "JDBC \u00b7 PreparedStatement \u00b7 CallableStatement \u00b7 MySQL Stored Procedures \u00b7 CRUD",
+      "category": "Unit I: Advanced JDBC",
+      "unit": "Unit I",
+      "readingTime": "12 min review",
+      "difficulty": "Comprehensive",
+      "description": "Comprehensive practical suite covering 6 enterprise JDBC experiments: full CRUD operations on Student table, CallableStatement stored procedure invocations on Person table, PreparedStatement parameterized salary filters, Product catalog operations, Department deletions, and Book table persistence.",
+      "aim": "To master advanced JDBC programming by implementing CRUD operations, parameterized SQL statements, and stored procedure calls across multiple relational schemas.",
+      "keyConcepts": [
+        "Experiment 1: Complete CRUD Operations on Student Database (INSERT, SELECT, UPDATE, DELETE)",
+        "Experiment 2: Insert Data into Person Table Using CallableStatement (Stored Procedures)",
+        "Experiment 3: Select Employees with Salary Greater Than Threshold Using PreparedStatement",
+        "Experiment 4: Insert and Display Product Details Using Parameterized Statements",
+        "Experiment 5: Delete Department Record Using CallableStatement",
+        "Experiment 6: Comprehensive CRUD Operations on Book Table Schema"
+      ],
+      "procedure": [
+        "Design relational tables for Student, Person, Employee, Product, Department, and Book.",
+        "Load MySQL JDBC driver and establish robust database connection.",
+        "Use PreparedStatement for secure, SQL-injection-resistant parameterized queries.",
+        "Define MySQL stored procedures with IN parameters and call via CallableStatement.",
+        "Implement interactive menu-driven CRUD routines for Student and Book management.",
+        "Verify query results, transaction safety, and graceful exception handling."
+      ],
+      "pdfPath": "weeks/week6/Week 06 - Advanced JDBC Programming & CRUD Operations.pdf",
+      "pageCount": 21,
+      "artifactType": "jdbc-crud-experiment",
+      "specs": {
+        "Document": "Week 6 \u2013 Advanced JDBC Programming Suite",
+        "Experiments": "6 Full Laboratory Experiments",
+        "Source": "weeks/week6/Week 06 - Advanced JDBC Programming & CRUD Operations.pdf",
+        "Page Count": 21
+      },
+      "pages": [
+        "weeks/week6/pages/page-01.jpg",
+        "weeks/week6/pages/page-02.jpg",
+        "weeks/week6/pages/page-03.jpg",
+        "weeks/week6/pages/page-04.jpg",
+        "weeks/week6/pages/page-05.jpg",
+        "weeks/week6/pages/page-06.jpg",
+        "weeks/week6/pages/page-07.jpg",
+        "weeks/week6/pages/page-08.jpg",
+        "weeks/week6/pages/page-09.jpg",
+        "weeks/week6/pages/page-10.jpg",
+        "weeks/week6/pages/page-11.jpg",
+        "weeks/week6/pages/page-12.jpg",
+        "weeks/week6/pages/page-13.jpg",
+        "weeks/week6/pages/page-14.jpg",
+        "weeks/week6/pages/page-15.jpg",
+        "weeks/week6/pages/page-16.jpg",
+        "weeks/week6/pages/page-17.jpg",
+        "weeks/week6/pages/page-18.jpg",
+        "weeks/week6/pages/page-19.jpg",
+        "weeks/week6/pages/page-20.jpg",
+        "weeks/week6/pages/page-21.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-07",
+      "number": "07",
+      "title": "Java Servlets & HTML Web Applications in Apache Tomcat",
+      "technology": "Java Servlets \u00b7 GenericServlet \u00b7 HttpServlet \u00b7 HTML5 \u00b7 Apache Tomcat",
+      "category": "Unit II: Servlets",
+      "unit": "Unit II",
+      "readingTime": "10 min review",
+      "difficulty": "Web Intermediate",
+      "description": "Foundational server-side Java web programming covering HTML form generation, Servlet interface implementation, GenericServlet protocol-independent processing, HttpServlet request-response dispatching, web.xml configuration, and Apache Tomcat deployment.",
+      "aim": "To create server-side Java web applications using HTML and Servlets (GenericServlet and HttpServlet) and deploy them to Apache Tomcat Server.",
+      "keyConcepts": [
+        "1. Simple Web Application using Pure HTML5",
+        "2. Simple Web Application using Basic Servlet (PrintWriter output)",
+        "3. Web Application using GenericServlet (Protocol-Independent Architecture)",
+        "4. Web Application using HttpServlet (doGet() and doPost() Overrides)",
+        "5. How to Deploy and Run a Servlet in Apache Tomcat Server",
+        "6. web.xml Deployment Descriptor & <servlet-mapping> Configuration"
+      ],
+      "procedure": [
+        "Construct HTML client user interface.",
+        "Implement basic Servlet generating dynamic HTML response via PrintWriter.",
+        "Inherit GenericServlet and override service(ServletRequest, ServletResponse).",
+        "Extend HttpServlet and override doGet(HttpServletRequest, HttpServletResponse).",
+        "Configure servlet mapping in web.xml or via @WebServlet annotation.",
+        "Deploy application WAR archive to Apache Tomcat webapps directory and test via browser."
+      ],
+      "pdfPath": "weeks/week7/Week 07 - Java Servlets & Tomcat Web Applications.pdf",
+      "pageCount": 8,
+      "artifactType": "servlet-task-set",
+      "specs": {
+        "Document": "Java Week 7 \u2013 Servlets and Web Applications",
+        "Server": "Apache Tomcat Server",
+        "Source": "weeks/week7/Week 07 - Java Servlets & Tomcat Web Applications.pdf",
+        "Page Count": 8
+      },
+      "pages": [
+        "weeks/week7/pages/page-01.jpg",
+        "weeks/week7/pages/page-02.jpg",
+        "weeks/week7/pages/page-03.jpg",
+        "weeks/week7/pages/page-04.jpg",
+        "weeks/week7/pages/page-05.jpg",
+        "weeks/week7/pages/page-06.jpg",
+        "weeks/week7/pages/page-07.jpg",
+        "weeks/week7/pages/page-08.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-08",
+      "number": "08",
+      "title": "Java Servlets Advanced Practical Suite & Database Integration",
+      "technology": "HttpServlet \u00b7 GET & POST \u00b7 GenericServlet \u00b7 Lifecycle \u00b7 HTML Forms \u00b7 JDBC in Servlets",
+      "category": "Unit II: Servlets",
+      "unit": "Unit II",
+      "readingTime": "15 min deep-dive",
+      "difficulty": "Advanced",
+      "description": "In-depth 7-experiment server-side Java suite exploring HTTP GET and POST request lifecycle, Servlet interface lifecycle hooks (init, service, destroy), dynamic form processing, database querying inside servlets via JDBC, online order checkout application, and customized response headers.",
+      "aim": "To develop advanced HTTP Servlets handling GET/POST requests, managing servlet lifecycle, processing form data, connecting to MySQL via JDBC, and building interactive web applications.",
+      "keyConcepts": [
+        "Experiment 1: Develop HTTP Servlet demonstrating HTTP GET & POST handling",
+        "Experiment 2: Develop servlet by extending GenericServlet class",
+        "Experiment 3: Implement Servlet interface and demonstrate lifecycle methods (init, service, destroy)",
+        "Experiment 4: Develop HTML form and process submitted data using Java Servlet",
+        "Experiment 5: Develop servlet application that connects to MySQL database using JDBC",
+        "Experiment 6: Develop online order processing application using HTML and Java Servlet",
+        "Experiment 7: Develop servlet that reads client input and produces dynamic response"
+      ],
+      "procedure": [
+        "Configure Java web environment in NetBeans / Eclipse with GlassFish or Tomcat.",
+        "Write HttpServlet subclasses handling parameterized form actions.",
+        "Implement logging inside init(), service(), and destroy() lifecycle methods.",
+        "Establish JDBC connection inside servlet and format SQL result sets into HTML tables.",
+        "Build complete multi-step online ordering system with price calculation and receipts.",
+        "Test and verify servlet endpoints via web browser."
+      ],
+      "pdfPath": "weeks/week8/Week 08 - Java Servlets & HTTP Request Processing.pdf",
+      "pageCount": 24,
+      "artifactType": "servlets-deep-suite",
+      "specs": {
+        "Document": "Week 8 \u2013 Java Servlets Laboratory Suite",
+        "Experiments": "7 Full Practical Experiments",
+        "Source": "weeks/week8/Week 08 - Java Servlets & HTTP Request Processing.pdf",
+        "Page Count": 24
+      },
+      "pages": [
+        "weeks/week8/pages/page-01.jpg",
+        "weeks/week8/pages/page-02.jpg",
+        "weeks/week8/pages/page-03.jpg",
+        "weeks/week8/pages/page-04.jpg",
+        "weeks/week8/pages/page-05.jpg",
+        "weeks/week8/pages/page-06.jpg",
+        "weeks/week8/pages/page-07.jpg",
+        "weeks/week8/pages/page-08.jpg",
+        "weeks/week8/pages/page-09.jpg",
+        "weeks/week8/pages/page-10.jpg",
+        "weeks/week8/pages/page-11.jpg",
+        "weeks/week8/pages/page-12.jpg",
+        "weeks/week8/pages/page-13.jpg",
+        "weeks/week8/pages/page-14.jpg",
+        "weeks/week8/pages/page-15.jpg",
+        "weeks/week8/pages/page-16.jpg",
+        "weeks/week8/pages/page-17.jpg",
+        "weeks/week8/pages/page-18.jpg",
+        "weeks/week8/pages/page-19.jpg",
+        "weeks/week8/pages/page-20.jpg",
+        "weeks/week8/pages/page-21.jpg",
+        "weeks/week8/pages/page-22.jpg",
+        "weeks/week8/pages/page-23.jpg",
+        "weeks/week8/pages/page-24.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-09",
+      "number": "09",
+      "title": "Spring Boot & Maven Application Development Suite",
+      "technology": "Spring Boot 3 \u00b7 Spring Starter \u00b7 Apache Maven \u00b7 pom.xml \u00b7 Spring Tool Suite (STS)",
+      "category": "Unit III: Spring Boot",
+      "unit": "Unit III",
+      "readingTime": "15 min study",
+      "difficulty": "Enterprise",
+      "description": "Three-part enterprise development guide utilizing Spring Tool Suite (STS) and Apache Maven: generating Spring Starter projects, developing embedded Tomcat REST web applications, and comprehensive pom.xml dependency management and build plugins.",
+      "aim": "To create, configure, build, and deploy Spring Boot web applications using Apache Maven in Spring Tool Suite (STS), mastering project object model (pom.xml) management.",
+      "keyConcepts": [
+        "Task 1: Building a Spring Boot Application Using Maven in Spring Tool Suite (STS)",
+        "Task 2: Developing a Simple Spring Boot Web Application in STS (REST Web Controller)",
+        "Task 3: Configuring POM.XML in Maven-based Spring Boot Project",
+        "Spring Starter Project Wizard & Starter Dependencies (spring-boot-starter-web)",
+        "Spring Boot Auto-Configuration & Embedded Apache Tomcat Server",
+        "pom.xml Project Object Model: groupId, artifactId, dependencies, build plugins"
+      ],
+      "procedure": [
+        "Launch Spring Tool Suite (STS) and create new Spring Starter Project.",
+        "Select project metadata, packaging (Jar), Java version, and spring-boot-starter-web dependency.",
+        "Develop web controller returning greeting endpoint at http://localhost:8080/.",
+        "Inspect and configure pom.xml with dependencies and spring-boot-maven-plugin.",
+        "Execute application via STS Spring Boot App runner.",
+        "Verify browser response and inspect build lifecycle via Maven goals."
+      ],
+      "pdfPath": "weeks/week9/Week 09 - Spring Boot & Maven Application Development.pdf",
+      "pageCount": 24,
+      "artifactType": "spring-boot-suite",
+      "specs": {
+        "Document": "Week 9 \u2013 Spring Boot & Maven Suite",
+        "Tasks": "Task 1 (Build), Task 2 (Web App), Task 3 (POM.XML)",
+        "Source": "weeks/week9/Week 09 - Spring Boot & Maven Application Development.pdf",
+        "Page Count": 24
+      },
+      "pages": [
+        "weeks/week9/pages/page-01.jpg",
+        "weeks/week9/pages/page-02.jpg",
+        "weeks/week9/pages/page-03.jpg",
+        "weeks/week9/pages/page-04.jpg",
+        "weeks/week9/pages/page-05.jpg",
+        "weeks/week9/pages/page-06.jpg",
+        "weeks/week9/pages/page-07.jpg",
+        "weeks/week9/pages/page-08.jpg",
+        "weeks/week9/pages/page-09.jpg",
+        "weeks/week9/pages/page-10.jpg",
+        "weeks/week9/pages/page-11.jpg",
+        "weeks/week9/pages/page-12.jpg",
+        "weeks/week9/pages/page-13.jpg",
+        "weeks/week9/pages/page-14.jpg",
+        "weeks/week9/pages/page-15.jpg",
+        "weeks/week9/pages/page-16.jpg",
+        "weeks/week9/pages/page-17.jpg",
+        "weeks/week9/pages/page-18.jpg",
+        "weeks/week9/pages/page-19.jpg",
+        "weeks/week9/pages/page-20.jpg",
+        "weeks/week9/pages/page-21.jpg",
+        "weeks/week9/pages/page-22.jpg",
+        "weeks/week9/pages/page-23.jpg",
+        "weeks/week9/pages/page-24.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-10",
+      "number": "10",
+      "title": "Spring Boot Database Connectivity using JdbcTemplate with In-Memory H2 Database",
+      "technology": "Spring Boot 3 \u00b7 JdbcTemplate \u00b7 H2 In-Memory DB \u00b7 RowMapper \u00b7 @PostConstruct \u00b7 Spring Web",
+      "category": "Unit III: Spring & Database",
+      "unit": "Unit III",
+      "readingTime": "8 min study",
+      "difficulty": "Intermediate",
+      "description": "Database-driven Spring Boot service utilizing Spring JdbcTemplate and embedded in-memory H2 database: automated schema initialization, batch data seeding with @PostConstruct lifecycle hooks, RowMapper lambda projections, and web endpoint visualization.",
+      "aim": "To design, develop, and validate a database-driven Spring Boot application utilizing Spring JdbcTemplate to connect to an embedded in-memory H2 database, automatically create tables, perform batch data insertions, execute SQL queries using RowMapper lambdas, and verify live database state via the H2 Web Console.",
+      "keyConcepts": [
+        "Elimination of boilerplate JDBC code via Spring JdbcTemplate & automatic exception translation",
+        "Embedded H2 in-memory operational mode (jdbc:h2:mem:testdb) residing in JVM heap memory",
+        "@PostConstruct lifecycle hook for automated schema creation (DDL) and record seeding (DML)",
+        "RowMapper lambda expressions: mapping SQL ResultSet records directly to Java domain model instances",
+        "Configuring custom server ports (server.port=83) and enabling H2 web console access (/h2-console)",
+        "Spring Web Controller architecture exposing database query results to browser clients"
+      ],
+      "procedure": [
+        "Generate a new Spring Boot project in STS incorporating Spring Web, Spring Data JDBC, and H2 Database dependencies.",
+        "Configure application.properties with custom port 83 (server.port=83), in-memory datasource URL (spring.datasource.url=jdbc:h2:mem:testdb), default sa credentials, and enable the H2 Web Console.",
+        "Create Author.java model class encapsulating firstName and lastName attributes with getters, setters, and constructors.",
+        "Develop AuthorService.java annotated with @Service and autowire Spring JdbcTemplate.",
+        "Define postConstruct() method annotated with @PostConstruct to execute DROP TABLE, CREATE TABLE, and batch INSERT statements.",
+        "Implement findAuthors() using jdbcTemplate.query() and RowMapper lambda (rs, rowNum) -> new Author(...).",
+        "Develop AuthorController.java with @RestController exposing GET / mapping returning author lists.",
+        "Launch application, verify execution in STS console, inspect browser output, and explore H2 Web Console."
+      ],
+      "pdfPath": "weeks/week10/Week 10 - Spring Boot Database Connectivity using JdbcTemplate with H2.pdf",
+      "pageCount": 7,
+      "artifactType": "jdbctemplate-h2-suite",
+      "specs": {
+        "Document": "Week 10 \u2013 JdbcTemplate & H2 In-Memory Suite",
+        "Components": "Author Model, AuthorService, AuthorController, H2 Console",
+        "Source": "weeks/week10/Week 10 - Spring Boot Database Connectivity using JdbcTemplate with H2.pdf",
+        "Page Count": 7
+      },
+      "pages": [
+        "weeks/week10/pages/page-01.jpg",
+        "weeks/week10/pages/page-02.jpg",
+        "weeks/week10/pages/page-03.jpg",
+        "weeks/week10/pages/page-04.jpg",
+        "weeks/week10/pages/page-05.jpg",
+        "weeks/week10/pages/page-06.jpg",
+        "weeks/week10/pages/page-07.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-11",
+      "number": "11",
+      "title": "Spring Boot JPA Application with Relational Database (MySQL) and Web Interface",
+      "technology": "Spring Boot 3 \u00b7 Spring Data JPA \u00b7 Hibernate ORM \u00b7 MySQL 8.0 \u00b7 Thymeleaf \u00b7 REST API",
+      "category": "Unit IV: Spring Data JPA",
+      "unit": "Unit IV",
+      "readingTime": "10 min study",
+      "difficulty": "Enterprise",
+      "description": "Enterprise Spring Boot application connecting to external MySQL relational database via Spring Data JPA and Hibernate ORM: entity mapping with identity generation, repository abstraction, automated schema synchronization, and dual client interfaces (RESTful JSON API and Thymeleaf HTML view).",
+      "aim": "To design, develop, and deploy an enterprise Spring Boot application connecting to an external MySQL relational database using Spring Data JPA and Hibernate, implement Object-Relational Mapping (ORM) for an Employee entity, and provide dual client interfaces: a RESTful JSON API and a server-side rendered Thymeleaf HTML web page.",
+      "keyConcepts": [
+        "Object-Relational Mapping (ORM) bridging Java OOP entities and relational SQL tables",
+        "Hibernate persistence provider with automatic schema validation and update (ddl-auto=update)",
+        "Type-4 Pure Java MySQL Connector/J driver configuration with MySQL8Dialect",
+        "JpaRepository abstraction providing out-of-the-box CRUD operations without DAO boilerplate",
+        "Dual client interfaces: RESTful JSON endpoint via @RestController and HTML UI via Thymeleaf & Spring MVC",
+        "Entity identity generation via @GeneratedValue(strategy = GenerationType.IDENTITY)"
+      ],
+      "procedure": [
+        "Connect to MySQL on port 3306 via MySQL Workbench and create database testdb and relational table employee.",
+        "Insert initial baseline records into MySQL table employee.",
+        "Create Spring Boot Maven project in STS with Spring Data JPA, Spring Web, Thymeleaf, and MySQL Driver dependencies.",
+        "Configure application.properties with MySQL JDBC URL, credentials, Hibernate dialect, and show-sql=true.",
+        "Create Employee.java entity annotated with @Entity, @Id, @GeneratedValue, name, and department.",
+        "Define EmployeeRepository.java interface extending JpaRepository<Employee, Integer>.",
+        "Implement EmployeeRestController exposing GET /api/employees returning JSON list.",
+        "Implement EmployeeWebController exposing GET /employees rendering employee-list.html via Thymeleaf.",
+        "Run application, verify Hibernate SQL statements in console, and inspect both JSON and HTML browser views."
+      ],
+      "pdfPath": "weeks/week11/Week 11 - Spring Boot JPA Application with MySQL & Thymeleaf.pdf",
+      "pageCount": 8,
+      "artifactType": "jpa-mysql-suite",
+      "specs": {
+        "Document": "Week 11 \u2013 Spring Data JPA & MySQL Enterprise Suite",
+        "Architecture": "Hibernate ORM, MySQL 8.0, REST API & Thymeleaf HTML",
+        "Source": "weeks/week11/Week 11 - Spring Boot JPA Application with MySQL & Thymeleaf.pdf",
+        "Page Count": 8
+      },
+      "pages": [
+        "weeks/week11/pages/page-01.jpg",
+        "weeks/week11/pages/page-02.jpg",
+        "weeks/week11/pages/page-03.jpg",
+        "weeks/week11/pages/page-04.jpg",
+        "weeks/week11/pages/page-05.jpg",
+        "weeks/week11/pages/page-06.jpg",
+        "weeks/week11/pages/page-07.jpg",
+        "weeks/week11/pages/page-08.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-12",
+      "number": "12",
+      "title": "Spring Data JPA Repository Operations with In-Memory H2 Database",
+      "technology": "Spring Boot 3 \u00b7 Spring Data JPA \u00b7 JpaRepository \u00b7 H2 Database \u00b7 @RestController \u00b7 JSON",
+      "category": "Unit IV: JPA Repositories",
+      "unit": "Unit IV",
+      "readingTime": "8 min study",
+      "difficulty": "Intermediate",
+      "description": "Lightweight Spring Data JPA architecture demonstrating runtime dynamic proxy repository operations on a Student entity: in-memory H2 database persistence, browser-based record insertion via HTTP GET query parameters, complete collection retrieval as JSON, and live table verification in H2 Console.",
+      "aim": "To implement, configure, and evaluate Spring Data JPA repository operations on a Student entity using an in-memory H2 database, establish browser-accessible HTTP GET endpoints to perform record insertion and retrieval without external testing utilities, and verify database state via the H2 Console.",
+      "keyConcepts": [
+        "Dynamic runtime repository proxy creation via Spring Data JPA extending JpaRepository<Student, Long>",
+        "Standard CRUD operations (save, findAll, findById, delete) without writing DAO implementation code",
+        "Browser-executable HTTP GET mappings using @RequestParam to trigger database record creation",
+        "Automatic Jackson JSON serialization of persistent entity collections for RESTful delivery",
+        "In-memory H2 database configuration (jdbc:h2:mem:testdb) with embedded web console verification",
+        "Entity primary key generation using AUTO or IDENTITY strategies"
+      ],
+      "procedure": [
+        "Create new Spring Boot project in STS incorporating Spring Web, Spring Data JPA, and H2 Database starters.",
+        "Configure application.properties with in-memory H2 datasource URL, credentials, H2Dialect, and enable H2 Console.",
+        "Create entity class Student.java with @Entity, @Id with @GeneratedValue, name, and city attributes.",
+        "Define StudentRepository.java as an interface extending JpaRepository<Student, Long>.",
+        "Develop StudentController.java annotated with @RestController and autowire StudentRepository.",
+        "Implement GET / health check endpoint returning welcome status.",
+        "Implement GET /add?name=...&city=... executing repo.save(new Student(name, city)) and returning confirmation.",
+        "Implement GET /students returning repo.findAll() as JSON array.",
+        "Execute Spring Boot app, perform record additions via Chrome URL requests, verify JSON output, and check H2 Console."
+      ],
+      "pdfPath": "weeks/week12/Week 12 - Spring Data JPA Repository Operations with In-Memory H2.pdf",
+      "pageCount": 7,
+      "artifactType": "jpa-h2-repo-suite",
+      "specs": {
+        "Document": "Week 12 \u2013 Spring Data JPA Repository Suite",
+        "Core Features": "Student Entity, JpaRepository Proxy, GET-based Ingestion, JSON API",
+        "Source": "weeks/week12/Week 12 - Spring Data JPA Repository Operations with In-Memory H2.pdf",
+        "Page Count": 7
+      },
+      "pages": [
+        "weeks/week12/pages/page-01.jpg",
+        "weeks/week12/pages/page-02.jpg",
+        "weeks/week12/pages/page-03.jpg",
+        "weeks/week12/pages/page-04.jpg",
+        "weeks/week12/pages/page-05.jpg",
+        "weeks/week12/pages/page-06.jpg",
+        "weeks/week12/pages/page-07.jpg"
+      ]
+    },
+    {
+      "id": "exhibit-13",
+      "number": "13",
+      "title": "Implementation of Derived and Custom Query Methods in Spring Data JPA",
+      "technology": "Spring Data JPA \u00b7 Derived Queries \u00b7 JPQL \u00b7 Native SQL \u00b7 @Query \u00b7 CommandLineRunner",
+      "category": "Unit IV: Advanced JPA Querying",
+      "unit": "Unit IV",
+      "readingTime": "12 min study",
+      "difficulty": "Advanced",
+      "description": "Comprehensive implementation of the 8 prescribed Spring Data JPA query methods: method name parsing (findBy, And, Or, OrderBy), JPQL object queries via @Query, native SQL query execution, automated CommandLineRunner data seeding, and runtime Hibernate SQL statement verification.",
+      "aim": "To design, declare, implement, and validate specialized derived query methods and custom queries utilizing the @Query annotation (both JPQL and Native SQL) in Spring Data JPA repository interfaces for a Student entity, and observe runtime SQL generation and result sets.",
+      "keyConcepts": [
+        "Query derivation grammar parsing repository method names into Abstract Syntax Trees (AST)",
+        "Derived filtering methods: findByName, findByFirstName, findByFirstNameAndLastName, findByFirstNameOrLastName",
+        "Automatic SQL ORDER BY sorting clause generation via findByOrderByNameAsc",
+        "Custom JPQL (Java Persistence Query Language) queries operating on entity objects via @Query",
+        "Native SQL queries with nativeQuery=true executing direct database engine SQL statements",
+        "Automated startup dataset population using CommandLineRunner / DataLoader component",
+        "Inspecting generated SQL queries and parameter binding via spring.jpa.show-sql=true"
+      ],
+      "procedure": [
+        "Define Student.java entity with id, name, firstName, lastName, city, and course fields.",
+        "Create StudentRepository.java extending JpaRepository<Student, Long>.",
+        "Declare the 8 required query methods: findAll, findByName, findByFirstName, findByFirstNameAndLastName, findByFirstNameOrLastName, findByOrderByNameAsc, @Query JPQL, and native @Query.",
+        "Implement DataLoader.java using CommandLineRunner to seed diverse student records with matching and non-matching attributes upon startup.",
+        "Develop StudentQueryController.java exposing distinct REST endpoints for testing each of the 8 query methods.",
+        "Configure spring.jpa.show-sql=true in application.properties to verify exact SQL statements in console.",
+        "Run application as Spring Boot App and execute test requests in Google Chrome for each query endpoint.",
+        "Observe STS Console to verify generated Hibernate SQL statements and confirm JSON result accuracy."
+      ],
+      "pdfPath": "weeks/week13/Week 13 - Implementation of Derived & Custom Query Methods in Spring Data JPA.pdf",
+      "pageCount": 11,
+      "artifactType": "jpa-custom-queries-suite",
+      "specs": {
+        "Document": "Week 13 \u2013 Derived & Custom Query Methods Suite",
+        "Query Scope": "8 Prescribed Methods (Derived, JPQL @Query, Native SQL)",
+        "Source": "weeks/week13/Week 13 - Implementation of Derived & Custom Query Methods in Spring Data JPA.pdf",
+        "Page Count": 11
+      },
+      "pages": [
+        "weeks/week13/pages/page-01.jpg",
+        "weeks/week13/pages/page-02.jpg",
+        "weeks/week13/pages/page-03.jpg",
+        "weeks/week13/pages/page-04.jpg",
+        "weeks/week13/pages/page-05.jpg",
+        "weeks/week13/pages/page-06.jpg",
+        "weeks/week13/pages/page-07.jpg",
+        "weeks/week13/pages/page-08.jpg",
+        "weeks/week13/pages/page-09.jpg",
+        "weeks/week13/pages/page-10.jpg",
+        "weeks/week13/pages/page-11.jpg"
+      ]
+    }
+  ]
+}

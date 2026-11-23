@@ -1,0 +1,222 @@
+{
+  "week1": {
+    "week": 1,
+    "pdf": "weeks/week1/Week 01 - Advanced Java Fundamentals & Web Architecture.pdf",
+    "pageCount": 5,
+    "pages": [
+      "weeks/week1/pages/page-01.jpg",
+      "weeks/week1/pages/page-02.jpg",
+      "weeks/week1/pages/page-03.jpg",
+      "weeks/week1/pages/page-04.jpg",
+      "weeks/week1/pages/page-05.jpg"
+    ]
+  },
+  "week2": {
+    "week": 2,
+    "pdf": "weeks/week2/Week 02 - OpenJDK & Oracle JDK 26 Installation on Ubuntu.pdf",
+    "pageCount": 2,
+    "pages": [
+      "weeks/week2/pages/page-01.jpg",
+      "weeks/week2/pages/page-02.jpg"
+    ]
+  },
+  "week3": {
+    "week": 3,
+    "pdf": "weeks/week3/Week 03 - Java and MS Access Database Connectivity without DSN.pdf",
+    "pageCount": 3,
+    "pages": [
+      "weeks/week3/pages/page-01.jpg",
+      "weeks/week3/pages/page-02.jpg",
+      "weeks/week3/pages/page-03.jpg"
+    ]
+  },
+  "week4": {
+    "week": 4,
+    "pdf": "weeks/week4/Week 04 - JDBC MySQL Database Connectivity.pdf",
+    "pageCount": 3,
+    "pages": [
+      "weeks/week4/pages/page-01.jpg",
+      "weeks/week4/pages/page-02.jpg",
+      "weeks/week4/pages/page-03.jpg"
+    ]
+  },
+  "week5": {
+    "week": 5,
+    "pdf": "weeks/week5/Week 05 - Local and Remote MySQL Network Database Connectivity.pdf",
+    "pageCount": 6,
+    "pages": [
+      "weeks/week5/pages/page-01.jpg",
+      "weeks/week5/pages/page-02.jpg",
+      "weeks/week5/pages/page-03.jpg",
+      "weeks/week5/pages/page-04.jpg",
+      "weeks/week5/pages/page-05.jpg",
+      "weeks/week5/pages/page-06.jpg"
+    ]
+  },
+  "week6": {
+    "week": 6,
+    "pdf": "weeks/week6/Week 06 - Advanced JDBC Programming & CRUD Operations.pdf",
+    "pageCount": 21,
+    "pages": [
+      "weeks/week6/pages/page-01.jpg",
+      "weeks/week6/pages/page-02.jpg",
+      "weeks/week6/pages/page-03.jpg",
+      "weeks/week6/pages/page-04.jpg",
+      "weeks/week6/pages/page-05.jpg",
+      "weeks/week6/pages/page-06.jpg",
+      "weeks/week6/pages/page-07.jpg",
+      "weeks/week6/pages/page-08.jpg",
+      "weeks/week6/pages/page-09.jpg",
+      "weeks/week6/pages/page-10.jpg",
+      "weeks/week6/pages/page-11.jpg",
+      "weeks/week6/pages/page-12.jpg",
+      "weeks/week6/pages/page-13.jpg",
+      "weeks/week6/pages/page-14.jpg",
+      "weeks/week6/pages/page-15.jpg",
+      "weeks/week6/pages/page-16.jpg",
+      "weeks/week6/pages/page-17.jpg",
+      "weeks/week6/pages/page-18.jpg",
+      "weeks/week6/pages/page-19.jpg",
+      "weeks/week6/pages/page-20.jpg",
+      "weeks/week6/pages/page-21.jpg"
+    ]
+  },
+  "week7": {
+    "week": 7,
+    "pdf": "weeks/week7/Week 07 - Java Servlets & Tomcat Web Applications.pdf",
+    "pageCount": 8,
+    "pages": [
+      "weeks/week7/pages/page-01.jpg",
+      "weeks/week7/pages/page-02.jpg",
+      "weeks/week7/pages/page-03.jpg",
+      "weeks/week7/pages/page-04.jpg",
+      "weeks/week7/pages/page-05.jpg",
+      "weeks/week7/pages/page-06.jpg",
+      "weeks/week7/pages/page-07.jpg",
+      "weeks/week7/pages/page-08.jpg"
+    ]
+  },
+  "week8": {
+    "week": 8,
+    "pdf": "weeks/week8/Week 08 - Java Servlets & HTTP Request Processing.pdf",
+    "pageCount": 24,
+    "pages": [
+      "weeks/week8/pages/page-01.jpg",
+      "weeks/week8/pages/page-02.jpg",
+      "weeks/week8/pages/page-03.jpg",
+      "weeks/week8/pages/page-04.jpg",
+      "weeks/week8/pages/page-05.jpg",
+      "weeks/week8/pages/page-06.jpg",
+      "weeks/week8/pages/page-07.jpg",
+      "weeks/week8/pages/page-08.jpg",
+      "weeks/week8/pages/page-09.jpg",
+      "weeks/week8/pages/page-10.jpg",
+      "weeks/week8/pages/page-11.jpg",
+      "weeks/week8/pages/page-12.jpg",
+      "weeks/week8/pages/page-13.jpg",
+      "weeks/week8/pages/page-14.jpg",
+      "weeks/week8/pages/page-15.jpg",
+      "weeks/week8/pages/page-16.jpg",
+      "weeks/week8/pages/page-17.jpg",
+      "weeks/week8/pages/page-18.jpg",
+      "weeks/week8/pages/page-19.jpg",
+      "weeks/week8/pages/page-20.jpg",
+      "weeks/week8/pages/page-21.jpg",
+      "weeks/week8/pages/page-22.jpg",
+      "weeks/week8/pages/page-23.jpg",
+      "weeks/week8/pages/page-24.jpg"
+    ]
+  },
+  "week9": {
+    "week": 9,
+    "pdf": "weeks/week9/Week 09 - Spring Boot & Maven Application Development.pdf",
+    "pageCount": 24,
+    "pages": [
+      "weeks/week9/pages/page-01.jpg",
+      "weeks/week9/pages/page-02.jpg",
+      "weeks/week9/pages/page-03.jpg",
+      "weeks/week9/pages/page-04.jpg",
+      "weeks/week9/pages/page-05.jpg",
+      "weeks/week9/pages/page-06.jpg",
+      "weeks/week9/pages/page-07.jpg",
+      "weeks/week9/pages/page-08.jpg",
+      "weeks/week9/pages/page-09.jpg",
+      "weeks/week9/pages/page-10.jpg",
+      "weeks/week9/pages/page-11.jpg",
+      "weeks/week9/pages/page-12.jpg",
+      "weeks/week9/pages/page-13.jpg",
+      "weeks/week9/pages/page-14.jpg",
+      "weeks/week9/pages/page-15.jpg",
+      "weeks/week9/pages/page-16.jpg",
+      "weeks/week9/pages/page-17.jpg",
+      "weeks/week9/pages/page-18.jpg",
+      "weeks/week9/pages/page-19.jpg",
+      "weeks/week9/pages/page-20.jpg",
+      "weeks/week9/pages/page-21.jpg",
+      "weeks/week9/pages/page-22.jpg",
+      "weeks/week9/pages/page-23.jpg",
+      "weeks/week9/pages/page-24.jpg"
+    ]
+  },
+  "week10": {
+    "week": 10,
+    "pdf": "weeks/week10/Week 10 - Spring Boot Database Connectivity using JdbcTemplate with H2.pdf",
+    "pageCount": 7,
+    "pages": [
+      "weeks/week10/pages/page-01.jpg",
+      "weeks/week10/pages/page-02.jpg",
+      "weeks/week10/pages/page-03.jpg",
+      "weeks/week10/pages/page-04.jpg",
+      "weeks/week10/pages/page-05.jpg",
+      "weeks/week10/pages/page-06.jpg",
+      "weeks/week10/pages/page-07.jpg"
+    ]
+  },
+  "week11": {
+    "week": 11,
+    "pdf": "weeks/week11/Week 11 - Spring Boot JPA Application with MySQL & Thymeleaf.pdf",
+    "pageCount": 8,
+    "pages": [
+      "weeks/week11/pages/page-01.jpg",
+      "weeks/week11/pages/page-02.jpg",
+      "weeks/week11/pages/page-03.jpg",
+      "weeks/week11/pages/page-04.jpg",
+      "weeks/week11/pages/page-05.jpg",
+      "weeks/week11/pages/page-06.jpg",
+      "weeks/week11/pages/page-07.jpg",
+      "weeks/week11/pages/page-08.jpg"
+    ]
+  },
+  "week12": {
+    "week": 12,
+    "pdf": "weeks/week12/Week 12 - Spring Data JPA Repository Operations with In-Memory H2.pdf",
+    "pageCount": 7,
+    "pages": [
+      "weeks/week12/pages/page-01.jpg",
+      "weeks/week12/pages/page-02.jpg",
+      "weeks/week12/pages/page-03.jpg",
+      "weeks/week12/pages/page-04.jpg",
+      "weeks/week12/pages/page-05.jpg",
+      "weeks/week12/pages/page-06.jpg",
+      "weeks/week12/pages/page-07.jpg"
+    ]
+  },
+  "week13": {
+    "week": 13,
+    "pdf": "weeks/week13/Week 13 - Implementation of Derived & Custom Query Methods in Spring Data JPA.pdf",
+    "pageCount": 11,
+    "pages": [
+      "weeks/week13/pages/page-01.jpg",
+      "weeks/week13/pages/page-02.jpg",
+      "weeks/week13/pages/page-03.jpg",
+      "weeks/week13/pages/page-04.jpg",
+      "weeks/week13/pages/page-05.jpg",
+      "weeks/week13/pages/page-06.jpg",
+      "weeks/week13/pages/page-07.jpg",
+      "weeks/week13/pages/page-08.jpg",
+      "weeks/week13/pages/page-09.jpg",
+      "weeks/week13/pages/page-10.jpg",
+      "weeks/week13/pages/page-11.jpg"
+    ]
+  }
+}

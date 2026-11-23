@@ -1,0 +1,140 @@
+/* typography.css - Museum Catalog Typography Hierarchy */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+body, button, input, textarea, select {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, .serif-text, .exhibit-numeral {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+code, kbd, samp, pre, .mono-text, .tech-path {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Master Display Headline */
+.display-title {
+  font-size: clamp(2.4rem, 4.2vw, 4.2rem);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.03em;
+}
+
+.display-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 450;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  max-width: 620px;
+}
+
+/* Section Markers */
+.section-marker {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--java-ochre);
+  margin-bottom: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-marker::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: var(--java-ochre);
+}
+
+.section-headline {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.05;
+  color: var(--ink-primary);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+}
+
+/* Academic & Metadata Typography */
+.meta-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-tertiary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.meta-value {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  line-height: 1.3;
+}
+
+/* Editorial Serif Accents */
+.text-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.text-gold {
+  color: var(--java-ochre);
+}
+
+.text-indigo {
+  color: var(--celestial-indigo);
+}
+
+/* Archive Fact Indicator Typography */
+.archive-fact-block {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.archive-numeral-giant {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.85;
+  color: var(--ink-primary);
+  letter-spacing: -0.04em;
+}
+
+.archive-label-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-label-primary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+}
+
+.archive-label-secondary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-tertiary);
+}

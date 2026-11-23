@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 320" width="100%" height="100%" fill="none" role="img" aria-label="Official Java Duke Mascot">
+  <defs>
+    <!-- Body Gradient for authentic depth -->
+    <radialGradient id="duke-body-grad" cx="45%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#3d424d"/>
+      <stop offset="55%" stop-color="#21252d"/>
+      <stop offset="100%" stop-color="#12151b"/>
+    </radialGradient>
+    
+    <!-- Red Nose Gradient -->
+    <radialGradient id="duke-nose-grad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="40%" stop-color="#e02424"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </radialGradient>
+
+    <!-- White highlight gradients -->
+    <linearGradient id="duke-limb-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="85%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <!-- Soft drop shadow -->
+    <radialGradient id="duke-ground-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(14, 18, 26, 0.25)"/>
+      <stop offset="100%" stop-color="rgba(14, 18, 26, 0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="140" cy="300" rx="90" ry="14" fill="url(#duke-ground-shadow)"/>
+
+  <!-- Left Foot -->
+  <path d="M 85 270 C 70 270 55 282 60 295 C 65 304 88 304 110 300 C 120 298 122 285 110 278 C 102 272 94 270 85 270 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="78" cy="286" rx="8" ry="4" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Right Foot -->
+  <path d="M 165 272 C 150 272 145 285 155 298 C 168 305 200 305 212 295 C 218 285 205 274 185 272 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="185" cy="286" rx="9" ry="4" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Left Arm (Resting on side) -->
+  <path d="M 68 185 C 45 195 38 220 52 235 C 62 245 76 242 82 228 C 88 214 84 195 72 188" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="2"/>
+  <ellipse cx="54" cy="226" rx="9" ry="12" transform="rotate(-20 54 226)" fill="url(#duke-limb-grad)"/>
+
+  <!-- Main Body (Iconic Cone / Pear Shape of Duke) -->
+  <path d="M 140 45 C 165 45 188 75 198 115 C 212 165 228 225 210 262 C 196 288 84 288 70 262 C 52 225 68 165 82 115 C 92 75 115 45 140 45 Z" fill="url(#duke-body-grad)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+
+  <!-- Right Arm (Raised high in iconic wave) -->
+  <!-- Upper Arm -->
+  <path d="M 195 150 C 218 135 235 110 238 85 C 240 68 222 62 212 75 C 200 92 190 120 182 145 Z" fill="url(#duke-body-grad)"/>
+  <!-- Waving Hand -->
+  <g transform="translate(230, 48) rotate(15)">
+    <!-- Palm -->
+    <ellipse cx="14" cy="18" rx="14" ry="12" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Thumb -->
+    <path d="M 4 16 C -2 14 -2 8 4 10 C 8 11 8 16 4 16 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Fingers -->
+    <path d="M 8 7 C 7 1 14 0 16 6 L 16 14 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 16 6 C 16 0 23 0 24 6 L 23 15 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 24 8 C 25 2 31 3 31 9 C 31 14 26 18 24 18 Z" fill="url(#duke-limb-grad)" stroke="#94a3b8" stroke-width="1.5"/>
+  </g>
+
+  <!-- Eye Region / White Oval Mask Surrounding the Nose -->
+  <ellipse cx="140" cy="148" rx="42" ry="34" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <ellipse cx="140" cy="148" rx="38" ry="30" fill="#f8fafc"/>
+
+  <!-- Duke's Iconic Giant Red Nose -->
+  <ellipse cx="140" cy="148" rx="28" ry="24" fill="url(#duke-nose-grad)" stroke="#b91c1c" stroke-width="1.5" style="filter: drop-shadow(0 6px 12px rgba(185, 28, 28, 0.4));"/>
+  
+  <!-- Specular Nose Highlight -->
+  <ellipse cx="131" cy="138" rx="8" ry="5" transform="rotate(-25 131 138)" fill="#ffffff" opacity="0.85"/>
+  <ellipse cx="146" cy="142" rx="3" ry="2" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Subtle Java Ecosystem Tag -->
+  <g transform="translate(140, 240)">
+    <rect x="-42" y="-10" width="84" height="20" rx="10" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+    <text x="0" y="4" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="800" fill="#ffffff" letter-spacing="1.5">OPENJDK</text>
+  </g>
+</svg>

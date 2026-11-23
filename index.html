@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Advanced Java Laboratory Record | Curated Digital Archive</title>
+
+  <!-- Security Headers & Defense Policy -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self';">
+
+  <!-- Search Engine Optimization & Metadata -->
+  <meta name="description"
+    content="Digital laboratory exhibition and curated technical catalog of Advanced Java Programming: JVM architecture, JDBC driverless connectivity, remote MySQL sockets, CRUD transactions, Servlets lifecycle, Spring Boot, and Spring Data JPA.">
+  <meta name="theme-color" content="#f6f5f1">
+  <meta name="author" content="Likhithsai Vemulapalli">
+  <link rel="icon" type="image/png" href="assets/sahe-college-seal-color.png">
+  <link rel="apple-touch-icon" href="assets/sahe-college-seal-color.png">
+
+  <!-- Architectural Theme Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/typography.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/layout-exhibition.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/bonafide-certificate.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/animations-physics.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/viewer-dock.css?v=20261123_v10">
+  <link rel="stylesheet" href="css/coding-preloader.css?v=20261123_v10">
+</head>
+
+<body>
+
+  <!-- Futuristic Coding & JVM Runtime Preloader -->
+  <div class="coding-preloader" id="coding-preloader" aria-live="polite" role="status">
+    <!-- Cybernetic Ambient Background Particles & Grid -->
+    <div class="preloader-grid-bg"></div>
+    <div class="preloader-syntax-rain" id="preloader-syntax-rain"></div>
+    <div class="preloader-radial-glow"></div>
+
+    <div class="preloader-hud-card">
+      <!-- HUD Top Tech Bar -->
+      <div class="hud-top-bar">
+        <div class="hud-brand-info">
+          <span class="hud-live-dot"></span>
+          <span class="hud-mono-tag">OPENJDK 26 · HOTSPOT 64-BIT</span>
+        </div>
+        <div class="hud-course-pill">
+          <span>CODE: 24IT303</span>
+        </div>
+      </div>
+
+      <!-- Center Logo & Title Block -->
+      <div class="hud-emblem-center">
+        <div class="hud-emblem-aura">
+          <img src="assets/java-logo.png" alt="Java Platform Official Logo" class="hud-java-img">
+        </div>
+        <div class="hud-meta-titles">
+          <span class="hud-eyebrow">SIDDHARTHA ACADEMY OF HIGHER EDUCATION</span>
+          <h2 class="hud-main-title">Advanced Java Laboratory Record</h2>
+          <span class="hud-sub-spec">III/IV B.Tech V Semester · Information Technology - Section C</span>
+        </div>
+      </div>
+
+      <!-- Live Compiler Terminal Output -->
+      <div class="hud-terminal-window">
+        <div class="terminal-traffic-lights">
+          <span class="light red"></span>
+          <span class="light yellow"></span>
+          <span class="light green"></span>
+          <span class="terminal-title-text">bash - javac - 24IT303.java</span>
+        </div>
+        <div class="terminal-output-body" id="preloader-terminal-body">
+          <div class="terminal-log-line active"><span class="cmd-prompt">$</span> <span class="cmd-str">sudo apt update &amp;&amp; apt install -y openjdk-26-jdk maven mysql-server</span></div>
+        </div>
+      </div>
+
+      <!-- Laser Precision Progress Bar -->
+      <div class="hud-progress-section">
+        <div class="hud-progress-meta">
+          <span class="hud-status-label" id="preloader-status-text">INITIALIZING JVM ENGINE...</span>
+          <span class="hud-progress-counter" id="preloader-counter">00%</span>
+        </div>
+        <div class="hud-progress-track">
+          <div class="hud-progress-fill" id="preloader-progress-bar">
+            <span class="hud-progress-beam"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button Area (Revealed on Compilation Ready) -->
+      <div class="hud-action-area" id="hud-action-area">
+        <button class="btn-hud-launch" id="btn-hud-launch" aria-label="Launch and Explore Lab Records">
+          <span class="btn-launch-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <span class="btn-launch-text">LAUNCH &amp; RUN LAB RECORDS</span>
+          <span class="btn-launch-pill" id="hud-timer-badge">15s</span>
+        </button>
+        <div class="hud-timer-subtext" id="hud-timer-subtext">
+          <span>Click to run project &amp; explore records</span>
+          <span class="bullet">·</span>
+          <span>Auto-launching in <strong id="hud-countdown-num">15</strong>s</span>
+        </div>
+      </div>
+
+      <!-- Security accreditation footer stamp -->
+      <div class="hud-footer-band">
+        <span>SAHE IT-C · 2026-27</span>
+        <span class="hud-status-ready" id="hud-ready-badge">STANDBY</span>
+        <span>REGD: 24EU08197</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exhibition Canvas Root -->
+  <main class="exhibition-canvas">
+
+    <!-- Room 0: Editorial Entrance Landing Page -->
+    <section class="gallery-room room-landing" id="room-entrance">
+
+      <!-- Suspended Technical Archive (Large Curated Ceiling Installation) -->
+      <div class="suspended-tech-installation" id="hero-suspended-archive" aria-hidden="true">
+        <!-- Anchor 1: Binary 01 Archival Metal Plate -->
+        <div class="suspended-anchor"
+          style="--left-pos: 4%; --string-len: 145px; --sway-duration: 6.6s; --sway-delay: 0s; --drop-delay: 0.06s; --depth: 1;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--plate" title="Archival Unit 01">
+            <span class="ornament-eyelet"></span>
+            <span class="ornament-mono">01</span>
+          </div>
+        </div>
+
+        <!-- Anchor 2: Hero Foreground JDBC Archival Paper Tag -->
+        <div class="suspended-anchor"
+          style="--left-pos: 13%; --string-len: 225px; --sway-duration: 7.6s; --sway-delay: -1.6s; --drop-delay: 0.16s; --depth: 2;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--tag ornament--hero-large" title="JDBC Driver Protocol">
+            <span class="ornament-eyelet"></span>
+            <span class="tag-title">JDBC</span>
+            <span class="tag-sub">DRIVER · SQL</span>
+          </div>
+        </div>
+
+        <!-- Anchor 3: Curly Brace Syntax Card (Background) -->
+        <div class="suspended-anchor"
+          style="--left-pos: 23%; --string-len: 90px; --sway-duration: 5.8s; --sway-delay: -3.2s; --drop-delay: 0.26s; --depth: 0;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--syntax" title="Code Scope">
+            <span class="syntax-char">{&nbsp;}</span>
+          </div>
+        </div>
+
+        <!-- Anchor 4: Database Cylinder Plaque -->
+        <div class="suspended-anchor"
+          style="--left-pos: 33%; --string-len: 170px; --sway-duration: 8.2s; --sway-delay: -0.9s; --drop-delay: 0.36s; --depth: 1;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--db" title="Relational Database">
+            <span class="ornament-eyelet"></span>
+            <span class="db-icon">🗄️</span>
+            <span class="db-title">SQL</span>
+          </div>
+        </div>
+
+        <!-- Anchor 5: Hero Foreground JVM Frosted Acrylic Plaque -->
+        <div class="suspended-anchor"
+          style="--left-pos: 44%; --string-len: 260px; --sway-duration: 7.2s; --sway-delay: -2.1s; --drop-delay: 0.46s; --depth: 2;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--plaque ornament--hero-large" title="Java Virtual Machine Runtime">
+            <span class="ornament-eyelet"></span>
+            <div class="plaque-header">
+              <span class="plaque-text">JVM</span>
+              <span class="plaque-dot"></span>
+            </div>
+            <span class="plaque-sub">RUNTIME</span>
+          </div>
+        </div>
+
+        <!-- Anchor 6: Hero Foreground Miniature Java Emblem Medallion -->
+        <div class="suspended-anchor"
+          style="--left-pos: 58%; --string-len: 215px; --sway-duration: 6.9s; --sway-delay: -1.2s; --drop-delay: 0.56s; --depth: 2;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--logo ornament--hero-large" title="Java Platform Emblem">
+            <span class="ornament-eyelet"></span>
+            <img src="assets/java-logo.png" alt="Official Java Emblem" class="ornament-logo-img">
+          </div>
+        </div>
+
+        <!-- Anchor 7: Semicolon Syntax Charm (Background) -->
+        <div class="suspended-anchor"
+          style="--left-pos: 69%; --string-len: 105px; --sway-duration: 5.4s; --sway-delay: -4.0s; --drop-delay: 0.66s; --depth: 0;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--syntax" title="Statement Terminator">
+            <span class="syntax-char">;</span>
+          </div>
+        </div>
+
+        <!-- Anchor 8: HTTP / Servlet Node Plaque -->
+        <div class="suspended-anchor"
+          style="--left-pos: 78%; --string-len: 180px; --sway-duration: 7.8s; --sway-delay: -2.8s; --drop-delay: 0.76s; --depth: 1;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--tag" title="HTTP Servlet Protocol">
+            <span class="ornament-eyelet"></span>
+            <span class="tag-title">HTTP</span>
+            <span class="tag-sub">SERVLET</span>
+          </div>
+        </div>
+
+        <!-- Anchor 9: Hero Foreground Spring Boot & Maven Tag -->
+        <div class="suspended-anchor"
+          style="--left-pos: 86%; --string-len: 245px; --sway-duration: 7.1s; --sway-delay: -0.5s; --drop-delay: 0.86s; --depth: 2;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--tag ornament--hero-large"
+            title="Spring Boot & Maven Project Object Model">
+            <span class="ornament-eyelet"></span>
+            <span class="tag-title">SPRING</span>
+            <span class="tag-sub">BOOT · MAVEN</span>
+          </div>
+        </div>
+
+        <!-- Anchor 10: Spring Data JPA Archival Plate -->
+        <div class="suspended-anchor"
+          style="--left-pos: 93%; --string-len: 155px; --sway-duration: 6.4s; --sway-delay: -3.4s; --drop-delay: 0.96s; --depth: 1;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--plate" title="Spring Data JPA & Hibernate ORM">
+            <span class="ornament-eyelet"></span>
+            <span class="ornament-mono">JPA</span>
+          </div>
+        </div>
+
+        <!-- Anchor 11: Tag Syntax Charm (Background) -->
+        <div class="suspended-anchor"
+          style="--left-pos: 98%; --string-len: 85px; --sway-duration: 5.6s; --sway-delay: -1.8s; --drop-delay: 1.04s; --depth: 0;">
+          <div class="suspension-line"></div>
+          <div class="tech-ornament ornament--syntax" title="Generic Types">
+            <span class="syntax-char">&lt;&gt;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Exhibition Bar -->
+      <header class="hero-top-bar stagger-in">
+        <div class="hero-top-brand">
+          <div class="java-mini-seal" title="Official Java Platform Emblem">
+            <img src="assets/java-logo.png" alt="Official Java Platform Emblem">
+          </div>
+          <span class="hero-top-text">Advanced Java Laboratory (24IT303) · Digital Archive</span>
+        </div>
+        <div class="hero-top-actions">
+          <a href="#bonafide-certificate" class="hero-top-cert-btn" title="View Official Bonafide Certificate">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            <span>Certificate</span>
+          </a>
+          <div class="hero-archive-badge">
+            <span class="badge-dot"></span>
+            <span id="hero-badge-count">13 Lab Tasks Recorded</span>
+          </div>
+          <button class="btn-replay-preloader" id="btn-replay-loader" title="Replay Compiler Boot Animation">
+            <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+            <span>Replay Boot</span>
+          </button>
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Mobile Navigation Drawer -->
+      <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+        <div class="mobile-drawer-header">
+          <div class="drawer-header-left">
+            <span class="drawer-badge-dot"></span>
+            <span class="drawer-title">Navigation &amp; Jump Links</span>
+          </div>
+          <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation">✕</button>
+        </div>
+        <div class="mobile-drawer-body">
+          <div class="drawer-section">
+            <span class="drawer-section-label">Interactive Experience</span>
+            <div class="drawer-nav-grid">
+              <a href="#bonafide-certificate" class="drawer-nav-link" data-close-drawer><span class="nav-icon">📜</span> Certificate</a>
+              <a href="#course-roadmap" class="drawer-nav-link" data-close-drawer><span class="nav-icon">🗺️</span> Roadmap</a>
+              <a href="#room-showcase" class="drawer-nav-link" data-close-drawer><span class="nav-icon">📚</span> 13 Records</a>
+              <a href="#playground" class="drawer-nav-link" data-close-drawer><span class="nav-icon">⚡</span> Playground</a>
+              <a href="#concepts" class="drawer-nav-link" data-close-drawer><span class="nav-icon">🔄</span> Concepts</a>
+            </div>
+          </div>
+          <div class="drawer-section">
+            <span class="drawer-section-label">Direct Week Jump</span>
+            <div class="drawer-weeks-chips" id="drawer-weeks-chips">
+              <!-- Dynamically populated with all 13 week chips -->
+            </div>
+          </div>
+          <div class="drawer-section">
+            <button class="drawer-passport-btn" id="drawer-btn-passport">
+              <img src="197_image.jpeg" alt="Student Profile" class="drawer-passport-avatar">
+              <span>View Student Credential Passport</span>
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+      <!-- Main Landing Grid -->
+      <div class="landing-grid">
+
+        <!-- Left Column: Editorial Masthead & Identity -->
+        <div class="landing-masthead stagger-in stagger-delay-1">
+          <span class="section-marker" id="hero-archive-marker">Course Code: 24IT303 · Digital Laboratory Archive</span>
+          <h1 class="display-title hero-title-masked" id="hero-title-main">
+            <span class="title-clip-line"><span class="title-inner-reveal">Advanced Java</span></span>
+            <span class="title-clip-line"><span class="title-inner-reveal text-italic text-gold">Laboratory
+                Record</span></span>
+          </h1>
+          <p class="display-subtitle">A curated record of Java environments, database connectivity, JDBC operations, and
+            server-side programming.</p>
+
+          <!-- Authentic Java Ecosystem & Platform Emblem Plate -->
+          <div class="java-ecosystem-plate">
+            <div class="java-emblem-container">
+              <img src="assets/java-logo.png" alt="Official Java Platform Logo">
+            </div>
+            <div class="java-meta-details">
+              <span class="java-meta-title">Java™ Platform · OpenJDK</span>
+              <span class="java-meta-desc">JDK SE 26 Architecture & JDBC Ecosystem</span>
+            </div>
+          </div>
+
+          <!-- Archive Fact Marker Block -->
+          <div class="archive-fact-block" id="archive-fact-hero" style="margin-top: 1rem;">
+            <div class="archive-numeral-giant" id="archive-numeral-07">
+              <span class="numeral-digit digit-0">1</span>
+              <span class="numeral-digit digit-7">3</span>
+            </div>
+            <div class="archive-label-block">
+              <span class="archive-label-primary">Lab Tasks Recorded</span>
+              <span class="archive-label-secondary">Curated Archival Exhibits</span>
+            </div>
+          </div>
+
+          <!-- Mobile Quick Action CTA -->
+          <div class="mobile-hero-cta">
+            <button class="btn-luxury-action btn-explore-jump" id="btn-explore-mobile">
+              <span>Explore 13 Lab Records</span>
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Student Credential Card & Primary Java Platform Emblem Asset -->
+        <div class="stagger-in stagger-delay-2" style="display: flex; flex-direction: column; gap: 2.5rem;">
+
+          <!-- Student credentials badge (Swiss Academic Credential layout) -->
+          <div class="student-credential-badge" id="student-badge" role="button" tabindex="0" title="Click to view official Student Credential Passport">
+            <!-- College Emblem Header Banner -->
+            <div class="badge-college-header">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/sahe-college-seal-color.png" alt="Siddhartha Academy of Higher Education Seal" style="width: 32px; height: 35px; object-fit: contain;">
+                <div style="display: flex; flex-direction: column;">
+                  <span style="font-size: 0.76rem; font-weight: 800; letter-spacing: 0.05em; color: var(--ink-primary); line-height: 1.15;">SIDDHARTHA ACADEMY OF HIGHER EDUCATION</span>
+                  <span style="font-size: 0.64rem; font-weight: 600; color: var(--ink-tertiary); letter-spacing: 0.04em;">DEEMED TO BE UNIVERSITY · IT DEPT</span>
+                </div>
+              </div>
+              <span class="badge-curriculum-tag">CODE: 24IT303</span>
+            </div>
+            <div class="badge-profile-layout">
+              <div class="profile-photo-container">
+                <img id="student-photo" src="197_image.jpeg" alt="Exhibitor Profile"
+                  onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='flex';">
+                <div id="avatar-fallback" class="avatar-fallback" style="display: none;">LV</div>
+              </div>
+              <div class="badge-info-side">
+                <div class="badge-row">
+                  <div class="profile-field">
+                    <span class="meta-label">Student Exhibitor</span>
+                    <span class="meta-value" id="val-student-name">Likhithsai Vemulapalli</span>
+                  </div>
+                </div>
+                <div class="badge-grid-2">
+                  <div class="profile-field">
+                    <span class="meta-label">Regd Number</span>
+                    <span class="meta-value" id="val-student-roll"
+                      style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; font-weight: 700;">24EU08197</span>
+                  </div>
+                  <div class="profile-field">
+                    <span class="meta-label">Branch & Section</span>
+                    <span class="meta-value" style="font-size: 0.88rem; font-weight: 700; color: var(--celestial-indigo);">IT - Section C</span>
+                  </div>
+                </div>
+                <div class="badge-grid-2">
+                  <div class="profile-field">
+                    <span class="meta-label">Course Code</span>
+                    <span class="meta-value" id="val-student-code"
+                      style="font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; font-weight: 700; color: var(--celestial-indigo);">24IT303</span>
+                  </div>
+                  <div class="profile-field">
+                    <span class="meta-label">Academic Level</span>
+                    <span class="meta-value" id="val-student-sem" style="font-size: 0.85rem;">III/IV B.Tech · 5th Sem</span>
+                  </div>
+                </div>
+                <div class="badge-row">
+                  <div class="profile-field">
+                    <span class="meta-label">Faculty Evaluator (Submitted To)</span>
+                    <span class="meta-value" style="font-size: 0.9rem; font-weight: 700;">Dr. Ramesh Mande <span style="font-size: 0.78rem; font-weight: 500; color: var(--ink-tertiary);">· Assoc. Prof, IT</span></span>
+                  </div>
+                </div>
+                <div class="badge-row">
+                  <div class="profile-field">
+                    <span class="meta-label">Institution</span>
+                    <span class="meta-value" id="val-student-college" style="font-size: 0.9rem;">Siddhartha Academy of Higher Education</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="credential-footer-marker">
+              <div class="credential-verified-pill">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+                <span>Academic Record Verified</span>
+              </div>
+              <div class="badge-click-prompt">
+                <span>View Passport</span>
+                <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary Java Platform Emblem Asset (User Asset Slot: assets/java-logo.*) -->
+          <div class="java-logo-hero-container" id="java-logo-hero-container" title="Official Java Platform Emblem">
+            <div class="java-logo-plinth">
+              <img id="java-logo-hero" src="assets/java-logo.png" alt="Official Java Platform Emblem"
+                class="java-logo-hero-img">
+            </div>
+            <div class="java-logo-plinth-shadow"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Action Button Area -->
+      <div class="hero-interaction-strip stagger-in stagger-delay-3">
+        <div class="start-action-container">
+          <div class="btn-magnetic-container">
+            <button class="btn-luxury-action" id="btn-explore">
+              <span>Lab Records</span>
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+              </svg>
+            </button>
+          </div>
+          <span
+            style="font-size: 0.95rem; font-weight: 500; color: var(--ink-tertiary); font-family: 'Cormorant Garamond', serif; font-style: italic;">
+            Explore the 13 recorded laboratory exhibits
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Room 1A: Visual Course Roadmap (Path from Java Fundamentals -> JDBC -> Servlets -> Spring Boot -> JPA) -->
+    <section class="gallery-room room-roadmap" id="course-roadmap">
+      <div class="roadmap-header-block stagger-in">
+        <div class="roadmap-title-side">
+          <span class="section-marker">Curriculum Progression · 13 Weeks</span>
+          <h2 class="section-headline">Course Architecture Roadmap</h2>
+          <p class="display-subtitle">Follow Duke across the 5 architectural phases of Advanced Java (24IT303). Click any milestone along the journey to jump directly to that week's recorded exhibit.</p>
+        </div>
+        <div class="roadmap-stats-side">
+          <div class="roadmap-completion-badge">
+            <span class="roadmap-badge-dot"></span>
+            <span id="roadmap-completion-text">13 / 13 Milestones Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="roadmap-track-container stagger-in" id="roadmap-track-container">
+        <!-- Floating Duke Mascot moving along the track -->
+        <div class="duke-runner" id="duke-runner" title="Duke is guiding your Java journey!">
+          <div class="duke-runner-sprite">
+            <img src="assets/duke-mascot.svg" alt="Java Duke Mascot" class="duke-runner-img">
+          </div>
+          <div class="duke-speech-bubble" id="duke-speech">Advancing to Spring Data JPA! 🚀</div>
+        </div>
+
+        <!-- 5 Phase Tracks -->
+        <div class="roadmap-phases-wrapper" id="roadmap-phases-wrapper">
+          <!-- Populated dynamically with phases and 13 week nodes in main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Room 1B: Official Academic Bonafide Certificate -->
+    <section class="gallery-room room-certificate" id="bonafide-certificate">
+      <div class="certificate-header-block stagger-in">
+        <div class="certificate-title-side">
+          <span class="section-marker">Official University Record · Deemed to be University</span>
+          <h2 class="section-headline">Bonafide Certificate</h2>
+          <p class="display-subtitle">Formal certification of laboratory investigations completed for <strong>Advanced Java Programming (24IT303)</strong> during the academic year 2026–2027.</p>
+        </div>
+        <div class="certificate-actions-bar">
+          <button class="btn-cert-action btn-cert-primary" id="btn-print-certificate" title="Print or Save Certificate as PDF">
+            <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <a href="#room-showcase" class="btn-cert-action" title="Jump to 13 Laboratory Records">
+            <span>Explore 13 Records</span>
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="bonafide-cert-wrapper stagger-in">
+        <div class="bonafide-cert-card">
+          <!-- Corner Filigree Accents -->
+          <span class="cert-corner cert-corner-tl"></span>
+          <span class="cert-corner cert-corner-tr"></span>
+          <span class="cert-corner cert-corner-bl"></span>
+          <span class="cert-corner cert-corner-br"></span>
+
+          <!-- Watermark Seal -->
+          <div class="cert-watermark">
+            <img src="assets/sahe-college-seal-color.png" alt="Siddhartha Academy Official Seal Watermark">
+          </div>
+
+          <!-- Inner Dashed Luxury Frame -->
+          <div class="cert-inner-frame">
+            <!-- Top Official SAHE Logo -->
+            <div class="cert-logo-container">
+              <img src="assets/sahe-logo.png" alt="Siddhartha Academy of Higher Education Official Logo">
+            </div>
+
+            <!-- University & Department Headings -->
+            <h3 class="cert-institution-title">SIDDHARTHA ACADEMY OF HIGHER EDUCATION</h3>
+            <span class="cert-dept-title">DEPARTMENT OF INFORMATION TECHNOLOGY</span>
+
+            <!-- Ornamental Divider Line -->
+            <div class="cert-divider-line"></div>
+
+            <!-- Certificate Title -->
+            <h2 class="cert-main-headline">BONAFIDE CERTIFICATE</h2>
+
+            <!-- Exact Body Narrative with Underlines matching scanned certificate -->
+            <p class="cert-body-narrative">
+              This is to certify that this is the bonafide practical record of work done by Mr./Ms.
+              <span class="cert-val-underline cert-val-name">Likhithsai Vemulapalli</span>
+              bearing Register / Roll No.
+              <span class="cert-val-underline cert-val-roll">24EU08197</span>
+              of the
+              <span class="cert-val-underline">Department of Information Technology</span>
+              , in the
+              <span class="cert-val-underline">Advanced Java Programming</span>
+              course during the academic year
+              <span class="cert-val-underline">2026–2027</span>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Room 1: Exhibition Catalog Showcase (13 Exhibits) -->
+    <section class="gallery-room" id="room-showcase">
+
+      <div class="showcase-header-block stagger-in">
+        <div class="showcase-title-side">
+          <span class="section-marker">Course Code: 24IT303 · Exhibition Registry</span>
+          <h2 class="section-headline" id="gallery-showcase-title">The Architecture of Java</h2>
+          <p class="display-subtitle" style="font-size: 1.1rem;">A chronological catalog of thirteen completed laboratory
+            investigations for <strong>Advanced Java Programming (24IT303)</strong>, spanning runtime fundamentals, driverless database engines, client-server sockets, and
+            servlet architectures.</p>
+        </div>
+        <div class="showcase-stats-side">
+          <span
+            style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-tertiary);">Curated
+            Exhibits</span>
+          <span
+            style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--ink-primary); line-height: 1;"
+            id="showcase-counter-stat">13 / 13</span>
+          <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-emerald);"
+            id="showcase-verified-text">All 13 Records Verified</span>
+        </div>
+      </div>
+
+      <!-- Quick Filter Pills -->
+      <div class="search-filter-pills stagger-in" id="search-filter-pills" role="toolbar" aria-label="Filter laboratory weeks">
+        <button class="filter-pill active" data-filter="all">All 13 Weeks</button>
+        <button class="filter-pill" data-filter="jdbc">JDBC &amp; SQL</button>
+        <button class="filter-pill" data-filter="servlet">Servlets &amp; Tomcat</button>
+        <button class="filter-pill" data-filter="spring">Spring Boot</button>
+        <button class="filter-pill" data-filter="jpa">Spring Data JPA</button>
+        <button class="filter-pill" data-filter="env">Linux &amp; JDK</button>
+      </div>
+
+      <!-- Live Search Toolbar -->
+      <div class="exhibition-toolbar-glass stagger-in">
+        <div class="search-box-editorial">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          </svg>
+          <input type="text" id="exhibit-search-input"
+            placeholder="Search across all 13 laboratory weeks, topics, JDBC, Servlets, Spring Boot, JPA, H2, REST..." aria-label="Search laboratory curriculum">
+        </div>
+      </div>
+
+      <!-- Alternating 13 Compositions Container -->
+      <div class="exhibition-layout-wrapper" id="exhibition-units">
+        <!-- Main.js dynamically constructs the 9 bespoke exhibit compositions here -->
+      </div>
+
+      <!-- Room 1B: Interactive Live Code Playground (Predict Output Simulator) -->
+      <div class="playground-section-wrapper stagger-in" id="playground">
+        <div class="playground-header-block">
+          <div class="playground-title-side">
+            <span class="section-marker">Interactive Runtime Simulation</span>
+            <h2 class="section-headline">Live Code Playground</h2>
+            <p class="display-subtitle">Test your understanding of core Advanced Java code patterns across JDBC, Servlets, and Spring Data JPA. Predict the output before running the simulation!</p>
+          </div>
+          <div class="playground-status-pill">
+            <span class="pg-live-dot"></span>
+            <span>Virtual JVM Runtime Ready</span>
+          </div>
+        </div>
+
+        <div class="playground-card" id="code-playground-card">
+          <!-- Playground Nav Tabs -->
+          <div class="playground-tabs-bar" role="tablist">
+            <button class="pg-tab-btn active" data-pg="jdbc" role="tab" aria-selected="true">01 · JDBC Query Execution</button>
+            <button class="pg-tab-btn" data-pg="servlet" role="tab" aria-selected="false">02 · Servlet HTTP Request Flow</button>
+            <button class="pg-tab-btn" data-pg="jpa" role="tab" aria-selected="false">03 · Spring Data JPA Derived Query</button>
+          </div>
+
+          <div class="playground-body" id="playground-body">
+            <!-- Dynamically rendered in main.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 1C: Animated Concept Visualizers (Step-by-Step Interactive Flow) -->
+      <div class="concepts-section-wrapper stagger-in" id="concepts">
+        <div class="concepts-header-block">
+          <div class="concepts-title-side">
+            <span class="section-marker">Visual Architecture Mechanics</span>
+            <h2 class="section-headline">Animated Concept Visualizers</h2>
+            <p class="display-subtitle">Click through step-by-step interactive architectural flows demonstrating how web requests and ORM mappings execute under the hood.</p>
+          </div>
+        </div>
+
+        <div class="concepts-card" id="concepts-card">
+          <div class="concepts-tabs-bar" role="tablist">
+            <button class="concept-tab-btn active" data-concept="servlet" role="tab" aria-selected="true">Tomcat Servlet Request / Response Cycle</button>
+            <button class="concept-tab-btn" data-concept="jpa" role="tab" aria-selected="false">JPA Entity ➔ Relational Database Row Mapping</button>
+          </div>
+
+          <div class="concept-stage" id="concept-stage">
+            <!-- Dynamically rendered in main.js with visual stages and controls -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Submission & Faculty Evaluation Footer Plate -->
+      <footer class="exhibition-footer-plate" id="dossier">
+        <div class="footer-academic-dossier">
+          <div class="footer-college-brand">
+            <img src="assets/sahe-college-seal-color.png" alt="Siddhartha Academy of Higher Education Official Seal" class="footer-sahe-seal">
+            <div class="footer-college-meta">
+              <span class="footer-inst-title">SIDDHARTHA ACADEMY OF HIGHER EDUCATION</span>
+              <span class="footer-inst-sub">DEEMED TO BE UNIVERSITY · III/IV B.Tech V Semester (2026–27)</span>
+              <span class="footer-course-tag">SUBJECT: Advanced Java Programming &nbsp;|&nbsp; CODE: 24IT303</span>
+            </div>
+          </div>
+
+          <div class="footer-submission-grid">
+            <div class="submission-card-box submitted-to-box">
+              <span class="sub-label">SUBMITTED TO :</span>
+              <strong class="sub-name">Dr. Ramesh Mande</strong>
+              <span class="sub-designation">Associate Professor, Dept of IT</span>
+              <span class="sub-dept">SAHE (Deemed to be University)</span>
+            </div>
+
+            <div class="submission-card-box submitted-by-box">
+              <span class="sub-label">SUBMITTED BY :</span>
+              <strong class="sub-name">Likhithsai Vemulapalli</strong>
+              <span class="sub-roll">Regd No : <code class="sub-mono-code">24EU08197</code></span>
+              <span class="sub-sec">Branch & Section : Information Technology - C</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Minimal Vertical Archive Rail -->
+  <aside class="exhibition-archive-rail" id="archive-rail" aria-hidden="true">
+    <div class="rail-line-track">
+      <div class="rail-indicator-dot" id="rail-dot"></div>
+    </div>
+    <div class="rail-badge">
+      <span id="rail-active-num">01</span>
+      <span class="rail-divider">/</span>
+      <span id="rail-total-num">13</span>
+    </div>
+  </aside>
+
+  <!-- Room 2: Embedded Document Gallery View (PDF.js Overlay) -->
+  <div class="viewer-modal-backdrop" id="viewer-backdrop" role="dialog" aria-modal="true"
+    aria-label="Document Exhibition Viewer">
+    <div class="viewer-exhibition-frame" id="viewer-frame">
+
+      <!-- Top Bar with Title -->
+      <div class="viewer-top-bar">
+        <div class="viewer-doc-title" id="viewer-doc-title">Document Exhibit</div>
+        <div class="viewer-top-badge">Laboratory Record Folio</div>
+      </div>
+
+      <!-- Side Index Table of Contents -->
+      <aside class="viewer-sidebar-index" id="viewer-sidebar" aria-label="Document Outline">
+        <div class="sidebar-title-label">
+          <span>Contents</span>
+          Document Index
+        </div>
+        <ul class="index-link-list" id="viewer-index-links">
+          <!-- Populated dynamically by PDF.js outline or default catalog items -->
+        </ul>
+      </aside>
+
+      <div class="document-display-canvas" id="document-canvas-space">
+        <!-- Floating Mobile Navigation Chevron Buttons for Fast One-Thumb Page Turning -->
+        <button class="mobile-turn-arrow mobile-arrow-prev" id="mobile-arrow-prev" aria-label="Previous Page" title="Previous Page">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button class="mobile-turn-arrow mobile-arrow-next" id="mobile-arrow-next" aria-label="Next Page" title="Next Page">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+
+        <div class="viewer-loading-indicator hidden" id="viewer-loading" aria-live="polite">
+          <div class="viewer-loader-ring"></div>
+          <span>Loading PDF</span>
+        </div>
+        <div class="viewer-magazine-stage" id="viewer-book-stage">
+          <!-- Real StPageFlip Digital Publication Container -->
+          <div class="viewer-flipbook-container" id="viewer-flipbook-container">
+            <div id="viewer-pageflip-mount" class="flipbook-mount-node"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sealed Envelope Placeholder (Interactive offline/drop state) -->
+      <div class="sealed-envelope-placeholder hidden" id="viewer-sealed-envelope" style="cursor: pointer;">
+        <input type="file" id="viewer-file-picker" accept="application/pdf" style="display: none;">
+        <div class="sealed-avatar">
+          <img src="197_image.jpeg" alt="Student profile portrait">
+        </div>
+        <h3 class="sealed-title">Archival Record Sealed</h3>
+        <p class="sealed-desc">This premium document slot is configured for verified record viewing. Click to select or
+          drag and drop the compiled experiment PDF.</p>
+        <code class="sealed-code-path" id="viewer-sealed-path">weeks/week1/Week 01 - Advanced Java Fundamentals &amp; Web Architecture.pdf</code>
+        <p class="sealed-desc" style="font-size: 0.8rem; color: var(--ink-tertiary);">The exhibition engine renders the
+          document in high-fidelity immediately.</p>
+      </div>
+
+      <!-- Apple-Style Bottom Floating Control Dock -->
+      <nav class="viewer-floating-dock" aria-label="Document Controls">
+        <!-- Document Outline Toggle Button -->
+        <button class="dock-btn" id="dock-sidebar-toggle" title="Toggle Document Index" aria-label="Toggle Outline">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </button>
+
+        <div class="dock-separator"></div>
+
+        <!-- Pagination Controls -->
+        <button class="dock-btn" id="dock-prev" title="Previous Page" aria-label="Previous Page">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+        </button>
+
+        <!-- Dynamic Page Stepper Counter Indicator -->
+        <div class="dock-page-badge">
+          <input type="number" id="dock-page-num" value="1" min="1" aria-label="Current Page">
+          <span id="dock-total-pages">/ 01</span>
+        </div>
+
+        <button class="dock-btn" id="dock-next" title="Next Page" aria-label="Next Page">
+          <svg viewBox="0 0 24 24">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+          </svg>
+        </button>
+
+        <div class="dock-separator"></div>
+
+        <!-- PDF Text Live Search Panel -->
+        <div class="dock-search-panel" title="Search document text">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+          </svg>
+          <input type="text" id="dock-search-input" placeholder="Search record..." aria-label="Search document text">
+        </div>
+
+        <div class="dock-separator"></div>
+
+        <!-- Zoom Controls -->
+        <button class="dock-btn" id="dock-zoom-out" title="Zoom Out" aria-label="Zoom Out">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 13H5v-2h14v2z" />
+          </svg>
+        </button>
+        <button class="dock-btn" id="dock-zoom-in" title="Zoom In" aria-label="Zoom In">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+          </svg>
+        </button>
+        <button class="dock-btn" id="dock-fit-width" title="Fit to Spread Width" aria-label="Fit Width">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 6v12h2V6H4zm14 0v12h2V6h-2zm-9 7h6v-2H9v2zm-2-1l3-3v2h2V9l3 3-3 3v-2H10v2l-3-3z" />
+          </svg>
+        </button>
+        <button class="dock-btn" id="dock-fit-page" title="Fit to Page" aria-label="Fit to Page">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2v10h12V2H6zm8 8h-4V4h4v6zm-8 4v8h12v-8H6zm8 6h-4v-4h4v4z" />
+          </svg>
+        </button>
+
+        <div class="dock-separator"></div>
+
+        <!-- Fullscreen and Download actions -->
+        <button class="dock-btn" id="dock-fullscreen" title="Toggle Fullscreen Mode" aria-label="Toggle Fullscreen">
+          <svg viewBox="0 0 24 24">
+            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+          </svg>
+        </button>
+        <button class="dock-btn" id="dock-download" title="Download Document Record" aria-label="Download Document">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+          </svg>
+        </button>
+
+        <div class="dock-separator"></div>
+
+        <!-- Close Viewer (Tertiary/Red Accent) -->
+        <button class="dock-btn dock-btn-close" id="dock-close" title="Exit Document Gallery"
+          aria-label="Close Document Viewer">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </nav>
+
+    </div>
+  </div>
+
+  <!-- Student Credential Passport Modal Popup -->
+  <div class="profile-modal-backdrop" id="profile-modal-backdrop" aria-hidden="true">
+    <div class="profile-modal-container" id="profile-modal-card">
+      <button class="profile-modal-close" id="profile-modal-close" aria-label="Close profile card">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+
+      <!-- Holographic Security Top Band -->
+      <div class="profile-card-header-band">
+        <div class="card-band-seal">
+          <img src="assets/sahe-college-seal-color.png" alt="Siddhartha Academy of Higher Education Official Seal" class="card-band-college-seal" style="width: 36px; height: 40px; object-fit: contain;">
+        </div>
+        <div class="card-band-text">
+          <span class="card-band-inst">SIDDHARTHA ACADEMY OF HIGHER EDUCATION</span>
+          <span class="card-band-dept">Deemed to be University · Department of Information Technology</span>
+        </div>
+        <div class="card-security-chip">
+          <span class="chip-gold-lines"></span>
+        </div>
+      </div>
+
+      <!-- Card Core Body -->
+      <div class="profile-card-body">
+        <div class="profile-hero-row">
+          <div class="profile-avatar-frame">
+            <img src="197_image.jpeg" alt="Likhithsai Vemulapalli" class="modal-student-img" onerror="this.src='assets/java-logo.png'">
+            <div class="avatar-verified-badge" title="Academic Identity Verified">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+          </div>
+          <div class="profile-identity-col">
+            <span class="profile-designation-label">STUDENT · LABORATORY INVESTIGATOR</span>
+            <h3 class="profile-student-fullname">Likhithsai Vemulapalli</h3>
+            <div class="profile-id-pills-row">
+              <span class="profile-roll-pill">ROLL NO: 24EU08197</span>
+              <span class="profile-batch-pill" style="background: rgba(66, 85, 212, 0.12); color: var(--celestial-indigo); border: 1px solid rgba(66, 85, 212, 0.3); font-weight: 700;">LAB CODE: 24IT303</span>
+              <span class="profile-batch-pill" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); font-weight: 700;">SECTION: IT - C</span>
+              <span class="profile-batch-pill">BATCH: 2024 – 2028</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Dossier Meta Grid -->
+        <div class="profile-dossier-grid">
+          <div class="dossier-cell">
+            <span class="dossier-label">Degree & Branch</span>
+            <span class="dossier-val">B.Tech in Information Technology</span>
+          </div>
+          <div class="dossier-cell">
+            <span class="dossier-label">Current Academic Level</span>
+            <span class="dossier-val">III/IV B.Tech V Semester (2026–27)</span>
+          </div>
+          <div class="dossier-cell">
+            <span class="dossier-label">Course & Subject</span>
+            <span class="dossier-val">Advanced Java Programming (<strong style="color: var(--celestial-indigo); font-family: 'JetBrains Mono', monospace;">24IT303</strong>)</span>
+          </div>
+          <div class="dossier-cell">
+            <span class="dossier-label">Faculty Evaluator (Submitted To)</span>
+            <span class="dossier-val" style="font-weight: 700; color: var(--ink-primary);">Dr. Ramesh Mande <span style="font-size: 0.75rem; font-weight: 500; color: var(--ink-tertiary);">· Assoc. Prof, IT</span></span>
+          </div>
+          <div class="dossier-cell" style="grid-column: 1 / -1;">
+            <span class="dossier-label">Archival Tasks Record</span>
+            <span class="dossier-val" style="color: var(--accent-emerald); font-weight: 700;">13 / 13 Laboratory Weeks Verified & Approved</span>
+          </div>
+        </div>
+
+        <!-- Official College Seal & Credential Footer -->
+        <div class="profile-card-footer">
+          <div class="card-seal-stamp">
+            <div class="seal-college-emblem">
+              <img src="assets/sahe-college-seal-color.png" alt="Siddhartha Academy of Higher Education Official Seal" class="seal-sahe-img" style="width: 42px; height: 46px; object-fit: contain;">
+            </div>
+            <div class="seal-meta">
+              <strong>ADVANCED JAVA LABORATORY RECORD · 24IT303</strong>
+              <span>Siddhartha Academy of Higher Education · 2026</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="#bonafide-certificate" class="btn-card-explore-records" id="btn-modal-view-cert" style="background: rgba(184, 141, 87, 0.12); color: #b88d57; border: 1px solid rgba(184, 141, 87, 0.35);">
+              <span>📜 Bonafide Certificate</span>
+            </a>
+            <button class="btn-card-explore-records" id="btn-modal-explore-records">
+              <span>Explore 13 Records</span>
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF.js Core Engine Library is loaded on-demand via viewer-dock.js only when a PDF is opened -->
+
+  <!-- HTML5 PageFlip Engine Library (StPageFlip) -->
+  <script src="js/page-flip.browser.js?v=20261123_v10"></script>
+
+  <!-- Luxury Interaction Script Modules -->
+  <script src="js/coding-preloader.js?v=20261123_v10"></script>
+  <script src="js/fluid-bg.js?v=20261123_v10"></script>
+  <script src="js/physics-hover.js?v=20261123_v10"></script>
+  <script src="js/flip-morph.js?v=20261123_v10"></script>
+  <script src="js/exhibition-motion.js?v=20261123_v10"></script>
+  <script src="js/viewer-dock.js?v=20261123_v10"></script>
+  <script src="js/main.js?v=20261123_v10"></script>
+</body>
+
+</html>

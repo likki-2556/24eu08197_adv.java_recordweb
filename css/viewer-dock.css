@@ -1,0 +1,721 @@
+/* viewer-dock.css - Digital University Newsletter & Magazine Flipbook Experience */
+
+/* Glassmorphic Exhibition Backdrop */
+.viewer-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(12, 17, 24, 0.45);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.viewer-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Document Frame container representing an Archival Folio */
+.viewer-exhibition-frame {
+  width: 96vw;
+  height: 94vh;
+  background: var(--clay-bg);
+  border-radius: var(--radius-lg);
+  border: var(--border-light);
+  box-shadow: 
+    0 30px 80px rgba(12, 17, 24, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.96) translateY(24px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.viewer-modal-backdrop.active .viewer-exhibition-frame {
+  transform: scale(1) translateY(0);
+}
+
+/* Sidebar Navigation Index */
+.viewer-sidebar-index {
+  width: 320px;
+  background: var(--clay-bg);
+  border-right: var(--border-editorial);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.viewer-sidebar-index.collapsed {
+  margin-left: -320px;
+}
+
+.sidebar-title-label {
+  padding: 2rem 2rem 1.2rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  border-bottom: var(--border-editorial);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-title-label span {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--java-ochre);
+}
+
+.index-link-list {
+  list-style: none;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.index-link-item {
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  border: var(--border-light);
+  box-shadow: var(--shadow-neumorphic-out);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.index-link-item:hover {
+  color: var(--celestial-indigo);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-clay-hover);
+}
+
+.index-link-item.active {
+  box-shadow: var(--shadow-neumorphic-in);
+  color: var(--celestial-indigo);
+  font-weight: 700;
+}
+
+/* Document Top Banner Header */
+.viewer-top-bar {
+  position: absolute;
+  top: 0;
+  left: 320px;
+  right: 0;
+  height: 56px;
+  background: rgba(246, 245, 241, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-editorial);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 40;
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.viewer-exhibition-frame.sidebar-collapsed .viewer-top-bar,
+.viewer-sidebar-index.collapsed ~ .viewer-top-bar {
+  left: 0;
+}
+
+.viewer-doc-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+
+.viewer-top-badge {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--java-ochre);
+}
+
+/* Main Display Space */
+.document-display-canvas {
+  flex: 1;
+  background: #e7e9ee;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4.5rem 1.5rem 7.5rem 1.5rem;
+  position: relative;
+  box-shadow: inset 4px 4px 12px rgba(160, 172, 190, 0.25);
+  scroll-behavior: smooth;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y pinch-zoom;
+}
+
+/* -------------------------------------------------------------
+   REAL STPAGEFLIP DIGITAL PUBLICATION CONTAINER & PAGES
+------------------------------------------------------------- */
+.viewer-magazine-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.viewer-flipbook-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.flipbook-mount-node {
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 
+    0 22px 55px rgba(12, 17, 24, 0.22),
+    0 4px 16px rgba(12, 17, 24, 0.08);
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+/* Individual Flipbook Page (100% Solid Opaque Paper) */
+.magazine-flip-page {
+  background: #ffffff !important;
+  opacity: 1 !important;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 1px rgba(12, 17, 24, 0.04);
+}
+
+.magazine-page-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.magazine-pdf-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff !important;
+  opacity: 1 !important;
+  pointer-events: none;
+}
+
+/* High-Fidelity Canvas & Page Image Sharpness (Ultra-HD / 4K) */
+.viewer-magazine-stage canvas,
+.viewer-flipbook-container canvas,
+.flipbook-mount-node canvas,
+.stf__parent canvas,
+.sft__wrapper canvas,
+.magazine-pdf-canvas {
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: high-quality !important;
+  image-rendering: crisp-edges !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Soft concave gutter shadow */
+.magazine-page-shadow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.page-shadow--left {
+  right: 0;
+  background: linear-gradient(to left, rgba(12, 17, 24, 0.08) 0%, rgba(12, 17, 24, 0.01) 60%, transparent 100%);
+}
+
+.page-shadow--right {
+  left: 0;
+  background: linear-gradient(to right, rgba(12, 17, 24, 0.08) 0%, rgba(12, 17, 24, 0.01) 60%, transparent 100%);
+}
+
+/* -------------------------------------------------------------
+   LOADING INDICATOR
+------------------------------------------------------------- */
+.viewer-loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(246, 245, 241, 0.95);
+  border: var(--border-light);
+  box-shadow: var(--shadow-clay);
+  color: var(--celestial-indigo);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.viewer-loader-ring {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(66, 85, 212, 0.22);
+  border-top-color: var(--celestial-indigo);
+  border-radius: 50%;
+  animation: viewer-spin 0.8s linear infinite;
+}
+
+@keyframes viewer-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -------------------------------------------------------------
+   APPLE-STYLE NEUMORPHIC FLOATING CONTROL DOCK
+------------------------------------------------------------- */
+.viewer-floating-dock {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  background: rgba(246, 245, 241, 0.92);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border-radius: var(--radius-pill);
+  border: var(--border-light);
+  box-shadow: var(--shadow-clay-hover);
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+  max-width: 95vw;
+}
+
+@media (max-width: 768px) {
+  .viewer-exhibition-frame {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    border: none;
+    transform: none !important;
+  }
+
+  .viewer-sidebar-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 85vw;
+    max-width: 310px;
+    z-index: 99;
+    box-shadow: 6px 0 32px rgba(12, 17, 24, 0.45);
+    transform: translateX(0);
+    margin-left: 0 !important;
+  }
+
+  .viewer-sidebar-index.collapsed {
+    transform: translateX(-105%);
+  }
+
+  .viewer-top-bar {
+    left: 0 !important;
+    height: 50px;
+    padding: 0 0.85rem;
+  }
+
+  .viewer-doc-title {
+    font-size: 0.92rem;
+    max-width: 58vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .viewer-top-badge {
+    font-size: 0.62rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .document-display-canvas {
+    width: 100% !important;
+    padding: 50px 4px 76px 4px;
+  }
+
+  .viewer-floating-dock {
+    bottom: max(0.6rem, env(safe-area-inset-bottom, 0.6rem));
+    padding: 0.35rem 0.6rem;
+    gap: 0.35rem;
+    max-width: calc(100vw - 12px);
+    border-radius: var(--radius-pill);
+    box-shadow: 0 10px 30px rgba(12, 17, 24, 0.25);
+  }
+
+  /* 44px minimum tap targets (Apple HIG & WCAG Level AA) */
+  .dock-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .dock-page-badge {
+    height: 44px;
+    padding: 0 0.65rem;
+    font-size: 0.82rem;
+  }
+
+  .dock-page-badge input {
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+    width: 30px;
+  }
+
+  /* Hide desktop-only controls on phones for single-tap navigation */
+  .dock-search-panel,
+  #dock-zoom-in,
+  #dock-zoom-out,
+  #dock-fit-width,
+  #dock-fit-page,
+  #dock-fullscreen,
+  .dock-separator {
+    display: none !important;
+  }
+}
+
+
+.dock-separator {
+  width: 1px;
+  height: 22px;
+  background-color: rgba(12, 17, 24, 0.1);
+  margin: 0 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .dock-separator {
+    display: none;
+  }
+}
+
+
+/* Dock Control Buttons */
+.dock-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--clay-bg);
+  box-shadow: var(--shadow-neumorphic-out);
+  border: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dock-btn:hover {
+  color: var(--celestial-indigo);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: var(--shadow-clay-hover);
+}
+
+.dock-btn:active {
+  transform: scale(0.95);
+  box-shadow: var(--shadow-neumorphic-in);
+}
+
+.dock-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--shadow-flat) !important;
+}
+
+.dock-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.dock-btn-close {
+  background: var(--clay-bg);
+  color: var(--accent-ruby) !important;
+}
+
+.dock-btn-close:hover {
+  color: #ffffff !important;
+  background: var(--accent-ruby) !important;
+}
+
+/* Custom Page Stepper Badge */
+.dock-page-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.9rem;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--clay-bg);
+  box-shadow: var(--shadow-neumorphic-in);
+  border: var(--border-light);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  white-space: nowrap;
+}
+
+.dock-page-badge input {
+  width: 38px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: 800;
+  color: var(--celestial-indigo);
+  font-size: 0.9rem;
+}
+
+.dock-page-badge input:focus {
+  outline: none;
+}
+
+/* Search bar on dock */
+.dock-search-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.9rem;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--clay-bg);
+  box-shadow: var(--shadow-neumorphic-in);
+  border: var(--border-light);
+  width: 160px;
+}
+
+@media (max-width: 850px) {
+  .dock-search-panel {
+    display: none;
+  }
+}
+
+
+.dock-search-panel input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.dock-search-panel input:focus {
+  outline: none;
+}
+
+.dock-search-panel input::placeholder {
+  color: var(--ink-tertiary);
+}
+
+.dock-search-panel svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--ink-tertiary);
+  flex-shrink: 0;
+}
+
+/* Sealed Document Placeholder */
+.sealed-envelope-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.4rem;
+  padding: 3.5rem 3rem;
+  max-width: 520px;
+  background: var(--clay-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-clay);
+  border: var(--border-light);
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, border-color 0.3s;
+}
+
+.sealed-envelope-placeholder:hover {
+  transform: translate(-50%, -52%) scale(1.02);
+  box-shadow: var(--shadow-clay-hover);
+  border-color: var(--celestial-indigo);
+}
+
+.sealed-envelope-placeholder.drag-over {
+  transform: translate(-50%, -50%) scale(1.05);
+  border-color: var(--java-ochre);
+  box-shadow: 0 30px 60px rgba(184, 141, 87, 0.25);
+}
+
+.sealed-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--clay-bg);
+  box-shadow: var(--shadow-neumorphic-in);
+  border: var(--border-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.sealed-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sealed-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.sealed-desc {
+  font-size: 0.92rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+}
+
+.sealed-code-path {
+  display: block;
+  padding: 0.75rem 1.2rem;
+  background: var(--canvas-base);
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--celestial-indigo);
+  box-shadow: var(--shadow-neumorphic-in);
+  border: var(--border-light);
+  font-weight: 700;
+  word-break: break-all;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Fullscreen support */
+.viewer-exhibition-frame:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+.viewer-exhibition-frame:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+/* Floating Mobile Navigation Chevron Buttons (Instant One-Thumb Page Turning) */
+.mobile-turn-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(12, 17, 24, 0.14);
+  box-shadow: 0 8px 24px rgba(12, 17, 24, 0.28);
+  display: none; /* Desktop hidden */
+  align-items: center;
+  justify-content: center;
+  z-index: 250;
+  cursor: pointer;
+  color: var(--celestial-indigo);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.mobile-turn-arrow svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.mobile-turn-arrow:active {
+  transform: translateY(-50%) scale(0.92);
+  background: var(--celestial-indigo);
+  color: #ffffff;
+}
+
+.mobile-arrow-prev {
+  left: 10px;
+}
+
+.mobile-arrow-next {
+  right: 10px;
+}
+
+@media (max-width: 900px) {
+  .viewer-modal-backdrop.active .mobile-turn-arrow {
+    display: flex;
+  }
+}
