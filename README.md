@@ -160,38 +160,6 @@ This project follows strict zero-vulnerability and production security practices
 
 ---
 
-## 🌐 Deployment Instructions
-
-The application is completely static (HTML5/CSS3/Vanilla JS) with zero server-side build steps required.
-
-### Option 1: Deploy to Netlify (Recommended)
-1. Drag and drop the `24EU08197_java_record` folder directly into [app.netlify.com/drop](https://app.netlify.com/drop), or connect via GitHub.
-2. Netlify will automatically detect `netlify.toml` and `_headers`, deploying with optimal cache rules and strict security headers.
-
-### Option 2: Deploy to Vercel
-1. Run `npx vercel` in the project root, or import the GitHub repository into the Vercel Dashboard.
-2. Set the framework preset to **Other** (Root directory: `.`).
-
-### Option 3: Deploy to GitHub Pages
-1. Push the repository to GitHub.
-2. Navigate to **Repository Settings → Pages**.
-3. Under **Build and deployment**, select **Source: Deploy from a branch** (`main` / `root`).
-4. Save and your site will be live within seconds.
-
-### Option 4: Local Development & Preview
-To run the exhibition locally:
-
-```bash
-# Using Python 3 built-in HTTP server:
-python -m http.server 8000
-
-# Or using Node.js http-server:
-npx http-server . -p 8000
-```
-Open your browser to `http://localhost:8000`.
-
----
-
 ## 📱 Accessibility & Reduced Motion Support
 
 - **WCAG 2.1 AA Compliant**: All interactive touch targets are at least 44×44px with 16px inputs to prevent auto-zooming on mobile iOS Safari.
